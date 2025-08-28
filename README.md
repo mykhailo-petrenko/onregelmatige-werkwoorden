@@ -17,6 +17,15 @@ Source is [data/source-werkwoorden.json].
 ]
 ```
 
+## Build
+```shell
+cd web-ui/
+
+./docker_build.sh
+./docker_push.sh
+```
+
+
 ## Parse
 ```js
 let rows = $0.getElementsByTagName('tr')

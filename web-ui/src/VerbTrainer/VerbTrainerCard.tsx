@@ -31,8 +31,8 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
     setInputs({ ...inputs, [fieldName]: e.target.value });
   }, [inputs]);
 
-  const isCorrect = (answer: string, expected: string) => {
-   return answer.trim().toLowerCase() === expected.trim().toLowerCase();
+  const isCorrect = (answer: string, expected: string[]) => {
+    return expected.includes(answer.trim().toLowerCase());
   };
 
   const onNext = () => {
@@ -48,8 +48,8 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
   };
 
   const isValid = {
-    impSing: isCorrect(inputs.impSing, current.imperfectum[0]),
-    impPlur: isCorrect(inputs.impPlur, current.imperfectum[1]),
+    impSing: isCorrect(inputs.impSing, [current.imperfectum[0]]),
+    impPlur: isCorrect(inputs.impPlur, [current.imperfectum[1]]),
     part: isCorrect(inputs.part, current.participium),
   };
 
@@ -119,7 +119,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
             value={inputs.part}
             onChange={handleChange('part')}
             isCorrect={isValid.part}
-            correct={current.participium}
+            correct={current.participium.join(', ')}
             isChecked={checked}
           />
 

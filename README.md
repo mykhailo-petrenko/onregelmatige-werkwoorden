@@ -16,3 +16,11 @@ Source is [data/source-werkwoorden.json].
   # ...
 ]
 ```
+
+## Parse
+```js
+let rows = $0.getElementsByTagName('tr')
+let selectedRows = [...rows].filter(row => ![...row.getElementsByTagName('td')].some(td => td.hasAttribute('colspan')))
+let werkworden = [...selectedRows].map(row => [...row.getElementsByTagName('td')].map(col => col.innerText))
+console.log(JSON.stringify(werkworden, null, 2))
+```

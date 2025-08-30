@@ -1,0 +1,2214 @@
+[
+  {
+    "id": 1,
+    "infinitive": "bakken",
+    "imperfectum": [
+      "bakte",
+      "bakten"
+    ],
+    "perfectum": [
+      "gebakken"
+    ],
+    "vertaling": "to bake, to fry",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 6,
+    "infinitive": "bederven",
+    "imperfectum": [
+      "bedierf",
+      "bedierven"
+    ],
+    "perfectum": [
+      "bedorven"
+    ],
+    "vertaling": "to spoil, to ruin",
+    "hulpWerkwoorden": [
+      "hebben",
+      "zijn"
+    ]
+  },
+  {
+    "id": 8,
+    "infinitive": "bedriegen",
+    "imperfectum": [
+      "bedroog",
+      "bedrogen"
+    ],
+    "perfectum": [
+      "bedrogen"
+    ],
+    "vertaling": "to deceive, to cheat",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 12,
+    "infinitive": "beginnen",
+    "imperfectum": [
+      "begon",
+      "begonnen"
+    ],
+    "perfectum": [
+      "begonnen"
+    ],
+    "vertaling": "to begin, to start",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 14,
+    "infinitive": "begrijpen",
+    "imperfectum": [
+      "begreep",
+      "begrepen"
+    ],
+    "perfectum": [
+      "begrepen"
+    ],
+    "vertaling": "to understand, to comprehend",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 41,
+    "infinitive": "bevallen",
+    "imperfectum": [
+      "beviel",
+      "bevielen"
+    ],
+    "perfectum": [
+      "bevallen"
+    ],
+    "vertaling": "to give birth, to deliver",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 47,
+    "infinitive": "bewegen",
+    "imperfectum": [
+      "bewoog",
+      "bewogen"
+    ],
+    "perfectum": [
+      "bewogen"
+    ],
+    "vertaling": "to move",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 52,
+    "infinitive": "bezoeken",
+    "imperfectum": [
+      "bezocht",
+      "bezochten"
+    ],
+    "perfectum": [
+      "bezocht"
+    ],
+    "vertaling": "to visit",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 54,
+    "infinitive": "bidden",
+    "imperfectum": [
+      "bad",
+      "baden"
+    ],
+    "perfectum": [
+      "gebeden"
+    ],
+    "vertaling": "to pray",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 55,
+    "infinitive": "bieden",
+    "imperfectum": [
+      "bood",
+      "boden"
+    ],
+    "perfectum": [
+      "geboden"
+    ],
+    "vertaling": "to offer",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 56,
+    "infinitive": "bijten",
+    "imperfectum": [
+      "beet",
+      "beten"
+    ],
+    "perfectum": [
+      "gebeten"
+    ],
+    "vertaling": "to bite",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 57,
+    "infinitive": "binden",
+    "imperfectum": [
+      "bond",
+      "bonden"
+    ],
+    "perfectum": [
+      "gebonden"
+    ],
+    "vertaling": "to tie, to bind",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 58,
+    "infinitive": "blazen",
+    "imperfectum": [
+      "blies",
+      "bliezen"
+    ],
+    "perfectum": [
+      "geblazen"
+    ],
+    "vertaling": "to blow",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 59,
+    "infinitive": "blijken",
+    "imperfectum": [
+      "bleek",
+      "bleken"
+    ],
+    "perfectum": [
+      "gebleken"
+    ],
+    "vertaling": "to turn out",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 60,
+    "infinitive": "blijven",
+    "imperfectum": [
+      "bleef",
+      "bleven"
+    ],
+    "perfectum": [
+      "gebleven"
+    ],
+    "vertaling": "to stay, to remain",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 62,
+    "infinitive": "braden",
+    "imperfectum": [
+      "braadde",
+      "braadden"
+    ],
+    "perfectum": [
+      "gebraden"
+    ],
+    "vertaling": "to roast",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 63,
+    "infinitive": "breken",
+    "imperfectum": [
+      "brak",
+      "braken"
+    ],
+    "perfectum": [
+      "gebroken"
+    ],
+    "vertaling": "to break",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 64,
+    "infinitive": "brengen",
+    "imperfectum": [
+      "bracht",
+      "brachten"
+    ],
+    "perfectum": [
+      "gebracht"
+    ],
+    "vertaling": "to bring",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 66,
+    "infinitive": "buigen",
+    "imperfectum": [
+      "boog",
+      "bogen"
+    ],
+    "perfectum": [
+      "gebogen"
+    ],
+    "vertaling": "to bend",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 68,
+    "infinitive": "denken",
+    "imperfectum": [
+      "dacht",
+      "dachten"
+    ],
+    "perfectum": [
+      "gedacht"
+    ],
+    "vertaling": "to think",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 70,
+    "infinitive": "doen",
+    "imperfectum": [
+      "deed",
+      "deden"
+    ],
+    "perfectum": [
+      "gedaan"
+    ],
+    "vertaling": "to do",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 71,
+    "infinitive": "dragen",
+    "imperfectum": [
+      "droeg",
+      "droegen"
+    ],
+    "perfectum": [
+      "gedragen"
+    ],
+    "vertaling": "to wear, to carry",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 72,
+    "infinitive": "drijven",
+    "imperfectum": [
+      "dreef",
+      "dreven"
+    ],
+    "perfectum": [
+      "gedreven"
+    ],
+    "vertaling": "to float, to drift",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 74,
+    "infinitive": "drinken",
+    "imperfectum": [
+      "dronk",
+      "dronken"
+    ],
+    "perfectum": [
+      "gedronken"
+    ],
+    "vertaling": "to drink",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 76,
+    "infinitive": "duiken",
+    "imperfectum": [
+      "dook",
+      "doken"
+    ],
+    "perfectum": [
+      "gedoken"
+    ],
+    "vertaling": "to dive",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 79,
+    "infinitive": "dwingen",
+    "imperfectum": [
+      "dwong",
+      "dwongen"
+    ],
+    "perfectum": [
+      "gedwongen"
+    ],
+    "vertaling": "to force",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 80,
+    "infinitive": "ervaren",
+    "imperfectum": [
+      "ervoer",
+      "ervoeren"
+    ],
+    "perfectum": [
+      "ervaren"
+    ],
+    "vertaling": "to experience",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 81,
+    "infinitive": "eten",
+    "imperfectum": [
+      "at",
+      "aten"
+    ],
+    "perfectum": [
+      "gegeten"
+    ],
+    "vertaling": "to eat",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 82,
+    "infinitive": "fluiten",
+    "imperfectum": [
+      "floot",
+      "floten"
+    ],
+    "perfectum": [
+      "gefloten"
+    ],
+    "vertaling": "to whistle",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 83,
+    "infinitive": "gaan",
+    "imperfectum": [
+      "ging",
+      "gingen"
+    ],
+    "perfectum": [
+      "gegaan"
+    ],
+    "vertaling": "to go",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 88,
+    "infinitive": "genezen",
+    "imperfectum": [
+      "genas",
+      "genazen"
+    ],
+    "perfectum": [
+      "genezen"
+    ],
+    "vertaling": "to cure, to get well",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 89,
+    "infinitive": "genieten",
+    "imperfectum": [
+      "genoot",
+      "genoten"
+    ],
+    "perfectum": [
+      "genoten"
+    ],
+    "vertaling": "to enjoy",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 90,
+    "infinitive": "geven",
+    "imperfectum": [
+      "gaf",
+      "gaven"
+    ],
+    "perfectum": [
+      "gegeven"
+    ],
+    "vertaling": "to give",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 92,
+    "infinitive": "gieten",
+    "imperfectum": [
+      "goot",
+      "goten"
+    ],
+    "perfectum": [
+      "gegoten"
+    ],
+    "vertaling": "to pour, to cast, to mould",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 93,
+    "infinitive": "glijden",
+    "imperfectum": [
+      "gleed",
+      "gleden"
+    ],
+    "perfectum": [
+      "gegleden"
+    ],
+    "vertaling": "to slide",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 94,
+    "infinitive": "glimmen",
+    "imperfectum": [
+      "glom",
+      "glommen"
+    ],
+    "perfectum": [
+      "geglommen"
+    ],
+    "vertaling": "to shine",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 95,
+    "infinitive": "graven",
+    "imperfectum": [
+      "groef",
+      "groeven"
+    ],
+    "perfectum": [
+      "gegraven"
+    ],
+    "vertaling": "to dig",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 97,
+    "infinitive": "hangen",
+    "imperfectum": [
+      "hing",
+      "hingen"
+    ],
+    "perfectum": [
+      "gehangen"
+    ],
+    "vertaling": "to hang",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 98,
+    "infinitive": "hebben",
+    "imperfectum": [
+      "had",
+      "hadden"
+    ],
+    "perfectum": [
+      "gehad"
+    ],
+    "vertaling": "to have",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 100,
+    "infinitive": "helpen",
+    "imperfectum": [
+      "hielp",
+      "hielpen"
+    ],
+    "perfectum": [
+      "geholpen"
+    ],
+    "vertaling": "to help",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 113,
+    "infinitive": "heten",
+    "imperfectum": [
+      "heette",
+      "heetten"
+    ],
+    "perfectum": [
+      "geheten"
+    ],
+    "vertaling": "to be called",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 116,
+    "infinitive": "houden",
+    "imperfectum": [
+      "hield",
+      "hielden"
+    ],
+    "perfectum": [
+      "gehouden"
+    ],
+    "vertaling": "to keep",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 120,
+    "infinitive": "kiezen",
+    "imperfectum": [
+      "koos",
+      "kozen"
+    ],
+    "perfectum": [
+      "gekozen"
+    ],
+    "vertaling": "to choose",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 121,
+    "infinitive": "kijken",
+    "imperfectum": [
+      "keek",
+      "keken"
+    ],
+    "perfectum": [
+      "gekeken"
+    ],
+    "vertaling": "to watch, to look",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 124,
+    "infinitive": "klimmen",
+    "imperfectum": [
+      "klom",
+      "klommen"
+    ],
+    "perfectum": [
+      "geklommen"
+    ],
+    "vertaling": "to climb",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 125,
+    "infinitive": "klinken",
+    "imperfectum": [
+      "klonk",
+      "klonken"
+    ],
+    "perfectum": [
+      "geklonken"
+    ],
+    "vertaling": "to sound, to ring",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 127,
+    "infinitive": "knijpen",
+    "imperfectum": [
+      "kneep",
+      "knepen"
+    ],
+    "perfectum": [
+      "geknepen"
+    ],
+    "vertaling": "to squeeze, to pinch",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 128,
+    "infinitive": "komen",
+    "imperfectum": [
+      "kwam",
+      "kwamen"
+    ],
+    "perfectum": [
+      "gekomen"
+    ],
+    "vertaling": "to come",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 129,
+    "infinitive": "kopen",
+    "imperfectum": [
+      "kocht",
+      "kochten"
+    ],
+    "perfectum": [
+      "gekocht"
+    ],
+    "vertaling": "to buy",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 130,
+    "infinitive": "krijgen",
+    "imperfectum": [
+      "kreeg",
+      "kregen"
+    ],
+    "perfectum": [
+      "gekregen"
+    ],
+    "vertaling": "to get, to receive",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 133,
+    "infinitive": "krimpen",
+    "imperfectum": [
+      "kromp",
+      "krompen"
+    ],
+    "perfectum": [
+      "gekrompen"
+    ],
+    "vertaling": "to shrink",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 134,
+    "infinitive": "kruipen",
+    "imperfectum": [
+      "kroop",
+      "kropen"
+    ],
+    "perfectum": [
+      "gekropen"
+    ],
+    "vertaling": "to crawl",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 135,
+    "infinitive": "kunnen",
+    "imperfectum": [
+      "kon",
+      "konden"
+    ],
+    "perfectum": [
+      "gekund"
+    ],
+    "vertaling": "to be able to, can",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 137,
+    "infinitive": "lachen",
+    "imperfectum": [
+      "lachte",
+      "lachten"
+    ],
+    "perfectum": [
+      "gelachen"
+    ],
+    "vertaling": "to laugh, to smile",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 138,
+    "infinitive": "laden",
+    "imperfectum": [
+      "laadde",
+      "laadden"
+    ],
+    "perfectum": [
+      "geladen"
+    ],
+    "vertaling": "to load",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 139,
+    "infinitive": "laten",
+    "imperfectum": [
+      "liet",
+      "lieten"
+    ],
+    "perfectum": [
+      "gelaten"
+    ],
+    "vertaling": "to let",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 140,
+    "infinitive": "lezen",
+    "imperfectum": [
+      "las",
+      "lazen"
+    ],
+    "perfectum": [
+      "gelezen"
+    ],
+    "vertaling": "to read",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 141,
+    "infinitive": "liegen",
+    "imperfectum": [
+      "loog",
+      "logen"
+    ],
+    "perfectum": [
+      "gelogen"
+    ],
+    "vertaling": "to lie",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 142,
+    "infinitive": "liggen",
+    "imperfectum": [
+      "lag",
+      "lagen"
+    ],
+    "perfectum": [
+      "gelegen"
+    ],
+    "vertaling": "to lay down",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 143,
+    "infinitive": "lijden",
+    "imperfectum": [
+      "leed",
+      "leden"
+    ],
+    "perfectum": [
+      "geleden"
+    ],
+    "vertaling": "to suffer",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 144,
+    "infinitive": "lijken",
+    "imperfectum": [
+      "leek",
+      "leken"
+    ],
+    "perfectum": [
+      "geleken"
+    ],
+    "vertaling": "to appear to be",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 145,
+    "infinitive": "lopen",
+    "imperfectum": [
+      "liep",
+      "liepen"
+    ],
+    "perfectum": [
+      "gelopen"
+    ],
+    "vertaling": "to walk",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 149,
+    "infinitive": "meten",
+    "imperfectum": [
+      "mat",
+      "maten"
+    ],
+    "perfectum": [
+      "gemeten"
+    ],
+    "vertaling": "to measure",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 152,
+    "infinitive": "moeten",
+    "imperfectum": [
+      "moest",
+      "moesten"
+    ],
+    "perfectum": [
+      "gemoeten"
+    ],
+    "vertaling": "to have to, to must",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 153,
+    "infinitive": "mogen",
+    "imperfectum": [
+      "mocht",
+      "mochten"
+    ],
+    "perfectum": [
+      "gemogen"
+    ],
+    "vertaling": "to may",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 154,
+    "infinitive": "nemen",
+    "imperfectum": [
+      "nam",
+      "namen"
+    ],
+    "perfectum": [
+      "genomen"
+    ],
+    "vertaling": "to take",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 158,
+    "infinitive": "ontbijten",
+    "imperfectum": [
+      "ontbeet",
+      "ontbeten"
+    ],
+    "perfectum": [
+      "ontbeten"
+    ],
+    "vertaling": "to have breakfast",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 186,
+    "infinitive": "ontwerpen",
+    "imperfectum": [
+      "ontwierp",
+      "ontwierpen"
+    ],
+    "perfectum": [
+      "ontworpen"
+    ],
+    "vertaling": "to design",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 194,
+    "infinitive": "raden",
+    "imperfectum": [
+      "raadde",
+      "raadden"
+    ],
+    "perfectum": [
+      "geraden"
+    ],
+    "vertaling": "to guess",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 196,
+    "infinitive": "rijden",
+    "imperfectum": [
+      "reed",
+      "reden"
+    ],
+    "perfectum": [
+      "gereden"
+    ],
+    "vertaling": "to drive",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 201,
+    "infinitive": "roepen",
+    "imperfectum": [
+      "riep",
+      "riepen"
+    ],
+    "perfectum": [
+      "geroepen"
+    ],
+    "vertaling": "to call, to shout",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 202,
+    "infinitive": "ruiken",
+    "imperfectum": [
+      "rook",
+      "roken"
+    ],
+    "perfectum": [
+      "geroken"
+    ],
+    "vertaling": "to smell",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 203,
+    "infinitive": "scheiden",
+    "imperfectum": [
+      "scheidde",
+      "scheidden"
+    ],
+    "perfectum": [
+      "gescheiden"
+    ],
+    "vertaling": "to separate, to divorce, to space out",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 204,
+    "infinitive": "schelden",
+    "imperfectum": [
+      "schold",
+      "scholden"
+    ],
+    "perfectum": [
+      "gescholden"
+    ],
+    "vertaling": "to curse",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 206,
+    "infinitive": "schenken",
+    "imperfectum": [
+      "schonk",
+      "schonken"
+    ],
+    "perfectum": [
+      "geschonken"
+    ],
+    "vertaling": "to gift, to pour",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 208,
+    "infinitive": "scheren",
+    "imperfectum": [
+      "schoor",
+      "schoren"
+    ],
+    "perfectum": [
+      "geschoren"
+    ],
+    "vertaling": "to shave",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 209,
+    "infinitive": "schieten",
+    "imperfectum": [
+      "schoot",
+      "schoten"
+    ],
+    "perfectum": [
+      "geschoten"
+    ],
+    "vertaling": "to shoot",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 210,
+    "infinitive": "schijnen",
+    "imperfectum": [
+      "scheen",
+      "schenen"
+    ],
+    "perfectum": [
+      "geschenen"
+    ],
+    "vertaling": "to shine, to seem",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 213,
+    "infinitive": "schrijven",
+    "imperfectum": [
+      "schreef",
+      "schreven"
+    ],
+    "perfectum": [
+      "geschreven"
+    ],
+    "vertaling": "to write",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 214,
+    "infinitive": "schrikken",
+    "imperfectum": [
+      "schrok",
+      "schrokken"
+    ],
+    "perfectum": [
+      "geschrokken"
+    ],
+    "vertaling": "to scare, to be shocked",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 216,
+    "infinitive": "schuiven",
+    "imperfectum": [
+      "schoof",
+      "schoven"
+    ],
+    "perfectum": [
+      "geschoven"
+    ],
+    "vertaling": "to slide, to shove",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 217,
+    "infinitive": "slaan",
+    "imperfectum": [
+      "sloeg",
+      "sloegen"
+    ],
+    "perfectum": [
+      "geslagen"
+    ],
+    "vertaling": "to hit, to beat, to bash",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 218,
+    "infinitive": "slapen",
+    "imperfectum": [
+      "sliep",
+      "sliepen"
+    ],
+    "perfectum": [
+      "geslapen"
+    ],
+    "vertaling": "to sleap",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 219,
+    "infinitive": "slijpen",
+    "imperfectum": [
+      "sleep",
+      "slepen"
+    ],
+    "perfectum": [
+      "geslepen"
+    ],
+    "vertaling": "to sharpen, to grind",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 222,
+    "infinitive": "sluipen",
+    "imperfectum": [
+      "sloop",
+      "slopen"
+    ],
+    "perfectum": [
+      "geslopen"
+    ],
+    "vertaling": "to sneak",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 223,
+    "infinitive": "sluiten",
+    "imperfectum": [
+      "sloot",
+      "sloten"
+    ],
+    "perfectum": [
+      "gesloten"
+    ],
+    "vertaling": "to close, to close down",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 224,
+    "infinitive": "smelten",
+    "imperfectum": [
+      "smolt",
+      "smolten"
+    ],
+    "perfectum": [
+      "gesmolten"
+    ],
+    "vertaling": "to melt",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 226,
+    "infinitive": "snijden",
+    "imperfectum": [
+      "sneed",
+      "sneden"
+    ],
+    "perfectum": [
+      "gesneden"
+    ],
+    "vertaling": "to cut",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 227,
+    "infinitive": "snuiten",
+    "imperfectum": [
+      "snoot",
+      "snoten"
+    ],
+    "perfectum": [
+      "gesnoten"
+    ],
+    "vertaling": "to blow one's nose",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 228,
+    "infinitive": "snuiven",
+    "imperfectum": [
+      "snoof",
+      "snoven"
+    ],
+    "perfectum": [
+      "gesnoven"
+    ],
+    "vertaling": "to sniff",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 230,
+    "infinitive": "spijten",
+    "imperfectum": [
+      "speet",
+      "speten"
+    ],
+    "perfectum": [
+      "gespeten"
+    ],
+    "vertaling": "to regret, to feel sorry",
+    "hulpWerkwoorden": [
+      "heeft"
+    ]
+  },
+  {
+    "id": 233,
+    "infinitive": "spreken",
+    "imperfectum": [
+      "sprak",
+      "spraken"
+    ],
+    "perfectum": [
+      "gesproken"
+    ],
+    "vertaling": "to speak",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 234,
+    "infinitive": "springen",
+    "imperfectum": [
+      "sprong",
+      "sprongen"
+    ],
+    "perfectum": [
+      "gesprongen"
+    ],
+    "vertaling": "to jump",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 237,
+    "infinitive": "spuiten",
+    "imperfectum": [
+      "spoot",
+      "spoten"
+    ],
+    "perfectum": [
+      "gespoten"
+    ],
+    "vertaling": "to spray",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 238,
+    "infinitive": "staan",
+    "imperfectum": [
+      "stond",
+      "stonden"
+    ],
+    "perfectum": [
+      "gestaan"
+    ],
+    "vertaling": "to stand",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 239,
+    "infinitive": "steken",
+    "imperfectum": [
+      "stak",
+      "staken"
+    ],
+    "perfectum": [
+      "gestoken"
+    ],
+    "vertaling": "to stab, to sting, to knife",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 240,
+    "infinitive": "stelen",
+    "imperfectum": [
+      "stal",
+      "stalen"
+    ],
+    "perfectum": [
+      "gestolen"
+    ],
+    "vertaling": "to steal",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 241,
+    "infinitive": "sterven",
+    "imperfectum": [
+      "stierf",
+      "stierven"
+    ],
+    "perfectum": [
+      "gestorven"
+    ],
+    "vertaling": "to die",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 242,
+    "infinitive": "stijgen",
+    "imperfectum": [
+      "steeg",
+      "stegen"
+    ],
+    "perfectum": [
+      "gestegen"
+    ],
+    "vertaling": "to rise",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 244,
+    "infinitive": "stinken",
+    "imperfectum": [
+      "stonk",
+      "stonken"
+    ],
+    "perfectum": [
+      "gestonken"
+    ],
+    "vertaling": "to smell bad, to reek",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 246,
+    "infinitive": "strijden",
+    "imperfectum": [
+      "streed",
+      "streden"
+    ],
+    "perfectum": [
+      "gestreden"
+    ],
+    "vertaling": "to battle, to fight, to struggle",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 247,
+    "infinitive": "strijken",
+    "imperfectum": [
+      "streek",
+      "streken"
+    ],
+    "perfectum": [
+      "gestreken"
+    ],
+    "vertaling": "to iron, to stroke",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 252,
+    "infinitive": "trekken",
+    "imperfectum": [
+      "trok",
+      "trokken"
+    ],
+    "perfectum": [
+      "getrokken"
+    ],
+    "vertaling": "to pull",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 253,
+    "infinitive": "vallen",
+    "imperfectum": [
+      "viel",
+      "vielen"
+    ],
+    "perfectum": [
+      "gevallen"
+    ],
+    "vertaling": "to fall",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 254,
+    "infinitive": "vangen",
+    "imperfectum": [
+      "ving",
+      "vingen"
+    ],
+    "perfectum": [
+      "gevangen"
+    ],
+    "vertaling": "to catch",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 255,
+    "infinitive": "varen",
+    "imperfectum": [
+      "vaarde",
+      "vaarden"
+    ],
+    "perfectum": [
+      "gevaren"
+    ],
+    "vertaling": "to fare",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 256,
+    "infinitive": "varen",
+    "imperfectum": [
+      "voer",
+      "voeren"
+    ],
+    "perfectum": [
+      "gevaren"
+    ],
+    "vertaling": "to sail",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 257,
+    "infinitive": "vechten",
+    "imperfectum": [
+      "vocht",
+      "vochten"
+    ],
+    "perfectum": [
+      "gevochten"
+    ],
+    "vertaling": "to fight",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 260,
+    "infinitive": "verbieden",
+    "imperfectum": [
+      "verbood",
+      "verboden"
+    ],
+    "perfectum": [
+      "verboden"
+    ],
+    "vertaling": "to forbid",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 270,
+    "infinitive": "verdwijnen",
+    "imperfectum": [
+      "verdween",
+      "verdwenen"
+    ],
+    "perfectum": [
+      "verdwenen"
+    ],
+    "vertaling": "to disappear",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 272,
+    "infinitive": "vergelijken",
+    "imperfectum": [
+      "vergeleek",
+      "vergeleken"
+    ],
+    "perfectum": [
+      "vergeleken"
+    ],
+    "vertaling": "to compare",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 273,
+    "infinitive": "vergeten",
+    "imperfectum": [
+      "vergat",
+      "vergaten"
+    ],
+    "perfectum": [
+      "vergeten"
+    ],
+    "vertaling": "to forget",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 285,
+    "infinitive": "verliezen",
+    "imperfectum": [
+      "verloor",
+      "verloren"
+    ],
+    "perfectum": [
+      "verloren"
+    ],
+    "vertaling": "to lose",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 287,
+    "infinitive": "vermijden",
+    "imperfectum": [
+      "vermeed",
+      "vermeden"
+    ],
+    "perfectum": [
+      "vermeden"
+    ],
+    "vertaling": "to avoid",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 288,
+    "infinitive": "verraden",
+    "imperfectum": [
+      "verraadde",
+      "verraadden"
+    ],
+    "perfectum": [
+      "verraden"
+    ],
+    "vertaling": "to betray",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 303,
+    "infinitive": "vertrekken",
+    "imperfectum": [
+      "vertrok",
+      "vertrokken"
+    ],
+    "perfectum": [
+      "vertrokken"
+    ],
+    "vertaling": "to leave",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 306,
+    "infinitive": "verwijten",
+    "imperfectum": [
+      "verweet",
+      "verweten"
+    ],
+    "perfectum": [
+      "verweten"
+    ],
+    "vertaling": "to blame",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 309,
+    "infinitive": "verzinnen",
+    "imperfectum": [
+      "verzon",
+      "verzonnen"
+    ],
+    "perfectum": [
+      "verzonnen"
+    ],
+    "vertaling": "to think up, to come up with, to dream up",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 316,
+    "infinitive": "vinden",
+    "imperfectum": [
+      "vond",
+      "vonden"
+    ],
+    "perfectum": [
+      "gevonden"
+    ],
+    "vertaling": "to find",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 319,
+    "infinitive": "vliegen",
+    "imperfectum": [
+      "vloog",
+      "vlogen"
+    ],
+    "perfectum": [
+      "gevlogen"
+    ],
+    "vertaling": "to fly",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 321,
+    "infinitive": "vouwen",
+    "imperfectum": [
+      "vouwde",
+      "vouwden"
+    ],
+    "perfectum": [
+      "gevouwen"
+    ],
+    "vertaling": "to fold",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 322,
+    "infinitive": "vragen",
+    "imperfectum": [
+      "vroeg",
+      "vroegen"
+    ],
+    "perfectum": [
+      "gevraagd"
+    ],
+    "vertaling": "to ask",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 324,
+    "infinitive": "vriezen",
+    "imperfectum": [
+      "vroor",
+      "vroren"
+    ],
+    "perfectum": [
+      "gevroren"
+    ],
+    "vertaling": "to freeze",
+    "hulpWerkwoorden": [
+      "heeft"
+    ]
+  },
+  {
+    "id": 327,
+    "infinitive": "wassen",
+    "imperfectum": [
+      "wies",
+      "wiesen"
+    ],
+    "perfectum": [
+      "gewassen"
+    ],
+    "vertaling": "to grow",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 328,
+    "infinitive": "wassen",
+    "imperfectum": [
+      "waste",
+      "wasten"
+    ],
+    "perfectum": [
+      "gewassen"
+    ],
+    "vertaling": "to wash",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 329,
+    "infinitive": "wegen",
+    "imperfectum": [
+      "woog",
+      "wogen"
+    ],
+    "perfectum": [
+      "gewogen"
+    ],
+    "vertaling": "to weigh",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 330,
+    "infinitive": "werpen",
+    "imperfectum": [
+      "wierp",
+      "wierpen"
+    ],
+    "perfectum": [
+      "geworpen"
+    ],
+    "vertaling": "to throw",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 332,
+    "infinitive": "weten",
+    "imperfectum": [
+      "wist",
+      "wisten"
+    ],
+    "perfectum": [
+      "geweten"
+    ],
+    "vertaling": "to know",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 336,
+    "infinitive": "wijzen",
+    "imperfectum": [
+      "wees",
+      "wezen"
+    ],
+    "perfectum": [
+      "gewezen"
+    ],
+    "vertaling": "to point, to point out, to point to",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 337,
+    "infinitive": "willen",
+    "imperfectum": [
+      "wou",
+      "wouden"
+    ],
+    "perfectum": [
+      "gewild"
+    ],
+    "vertaling": "to want",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 339,
+    "infinitive": "winnen",
+    "imperfectum": [
+      "won",
+      "wonnen"
+    ],
+    "perfectum": [
+      "gewonnen"
+    ],
+    "vertaling": "to win",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 340,
+    "infinitive": "worden",
+    "imperfectum": [
+      "werd",
+      "werden"
+    ],
+    "perfectum": [
+      "geworden"
+    ],
+    "vertaling": "to become",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 342,
+    "infinitive": "wrijven",
+    "imperfectum": [
+      "wreef",
+      "wreven"
+    ],
+    "perfectum": [
+      "gewreven"
+    ],
+    "vertaling": "to rub",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 344,
+    "infinitive": "zeggen",
+    "imperfectum": [
+      "zei",
+      "zeiden"
+    ],
+    "perfectum": [
+      "gezegd"
+    ],
+    "vertaling": "to say",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 346,
+    "infinitive": "zenden",
+    "imperfectum": [
+      "zond",
+      "zonden"
+    ],
+    "perfectum": [
+      "gezonden"
+    ],
+    "vertaling": "to send",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 348,
+    "infinitive": "zien",
+    "imperfectum": [
+      "zag",
+      "zagen"
+    ],
+    "perfectum": [
+      "gezien"
+    ],
+    "vertaling": "to see",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 350,
+    "infinitive": "zijn",
+    "imperfectum": [
+      "was",
+      "waren"
+    ],
+    "perfectum": [
+      "geweest"
+    ],
+    "vertaling": "to be",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 351,
+    "infinitive": "zingen",
+    "imperfectum": [
+      "zong",
+      "zongen"
+    ],
+    "perfectum": [
+      "gezongen"
+    ],
+    "vertaling": "to sing",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 352,
+    "infinitive": "zinken",
+    "imperfectum": [
+      "zonk",
+      "zonken"
+    ],
+    "perfectum": [
+      "gezonken"
+    ],
+    "vertaling": "to sink",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  },
+  {
+    "id": 354,
+    "infinitive": "zitten",
+    "imperfectum": [
+      "zat",
+      "zaten"
+    ],
+    "perfectum": [
+      "gezeten"
+    ],
+    "vertaling": "to sit",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 355,
+    "infinitive": "zoeken",
+    "imperfectum": [
+      "zocht",
+      "zochten"
+    ],
+    "perfectum": [
+      "gezocht"
+    ],
+    "vertaling": "to search",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 357,
+    "infinitive": "zuigen",
+    "imperfectum": [
+      "zoog",
+      "zogen"
+    ],
+    "perfectum": [
+      "gezogen"
+    ],
+    "vertaling": "to suck",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 359,
+    "infinitive": "zullen",
+    "imperfectum": [
+      "zou",
+      "zouden"
+    ],
+    "perfectum": [
+      ""
+    ],
+    "vertaling": "will",
+    "hulpWerkwoorden": [
+      "–"
+    ]
+  },
+  {
+    "id": 362,
+    "infinitive": "zwemmen",
+    "imperfectum": [
+      "zwom",
+      "zwommen"
+    ],
+    "perfectum": [
+      "gezwommen"
+    ],
+    "vertaling": "to swim",
+    "hulpWerkwoorden": [
+      "zijn",
+      "hebben"
+    ]
+  },
+  {
+    "id": 366,
+    "infinitive": "zwijgen",
+    "imperfectum": [
+      "zweeg",
+      "zwegen"
+    ],
+    "perfectum": [
+      "gezwegen"
+    ],
+    "vertaling": "to be quiet",
+    "hulpWerkwoorden": [
+      "hebben"
+    ]
+  },
+  {
+    "id": 377,
+    "infinitive": "overlijden",
+    "imperfectum": [
+      "overleed",
+      "overleden"
+    ],
+    "perfectum": [
+      "overleden"
+    ],
+    "vertaling": "to pass away, to die, to decease",
+    "hulpWerkwoorden": [
+      "zijn"
+    ]
+  }
+]

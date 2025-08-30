@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "infinitive": "bakken",
     "imperfectum": [
       "bakte",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": "6",
     "infinitive": "bederven",
     "imperfectum": [
       "bedierf",
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": "8",
     "infinitive": "bedriegen",
     "imperfectum": [
       "bedroog",
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": "12",
     "infinitive": "beginnen",
     "imperfectum": [
       "begon",
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": "14",
     "infinitive": "begrijpen",
     "imperfectum": [
       "begreep",
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": "41",
     "infinitive": "bevallen",
     "imperfectum": [
       "beviel",
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "id": 47,
+    "id": "47",
     "infinitive": "bewegen",
     "imperfectum": [
       "bewoog",
@@ -106,7 +106,7 @@
     ]
   },
   {
-    "id": 52,
+    "id": "52",
     "infinitive": "bezoeken",
     "imperfectum": [
       "bezocht",
@@ -121,7 +121,7 @@
     ]
   },
   {
-    "id": 54,
+    "id": "54",
     "infinitive": "bidden",
     "imperfectum": [
       "bad",
@@ -136,7 +136,7 @@
     ]
   },
   {
-    "id": 55,
+    "id": "55",
     "infinitive": "bieden",
     "imperfectum": [
       "bood",
@@ -151,7 +151,7 @@
     ]
   },
   {
-    "id": 56,
+    "id": "56",
     "infinitive": "bijten",
     "imperfectum": [
       "beet",
@@ -166,7 +166,7 @@
     ]
   },
   {
-    "id": 57,
+    "id": "57",
     "infinitive": "binden",
     "imperfectum": [
       "bond",
@@ -181,7 +181,7 @@
     ]
   },
   {
-    "id": 58,
+    "id": "58",
     "infinitive": "blazen",
     "imperfectum": [
       "blies",
@@ -196,7 +196,7 @@
     ]
   },
   {
-    "id": 59,
+    "id": "59",
     "infinitive": "blijken",
     "imperfectum": [
       "bleek",
@@ -211,7 +211,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": "60",
     "infinitive": "blijven",
     "imperfectum": [
       "bleef",
@@ -226,7 +226,7 @@
     ]
   },
   {
-    "id": 62,
+    "id": "62",
     "infinitive": "braden",
     "imperfectum": [
       "braadde",
@@ -241,7 +241,7 @@
     ]
   },
   {
-    "id": 63,
+    "id": "63",
     "infinitive": "breken",
     "imperfectum": [
       "brak",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "id": 64,
+    "id": "64",
     "infinitive": "brengen",
     "imperfectum": [
       "bracht",
@@ -271,7 +271,7 @@
     ]
   },
   {
-    "id": 66,
+    "id": "66",
     "infinitive": "buigen",
     "imperfectum": [
       "boog",
@@ -286,7 +286,7 @@
     ]
   },
   {
-    "id": 68,
+    "id": "68",
     "infinitive": "denken",
     "imperfectum": [
       "dacht",
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": "70",
     "infinitive": "doen",
     "imperfectum": [
       "deed",
@@ -316,7 +316,7 @@
     ]
   },
   {
-    "id": 71,
+    "id": "71",
     "infinitive": "dragen",
     "imperfectum": [
       "droeg",
@@ -331,7 +331,7 @@
     ]
   },
   {
-    "id": 72,
+    "id": "72",
     "infinitive": "drijven",
     "imperfectum": [
       "dreef",
@@ -347,7 +347,7 @@
     ]
   },
   {
-    "id": 74,
+    "id": "74",
     "infinitive": "drinken",
     "imperfectum": [
       "dronk",
@@ -362,7 +362,7 @@
     ]
   },
   {
-    "id": 76,
+    "id": "76",
     "infinitive": "duiken",
     "imperfectum": [
       "dook",
@@ -378,7 +378,7 @@
     ]
   },
   {
-    "id": 79,
+    "id": "79",
     "infinitive": "dwingen",
     "imperfectum": [
       "dwong",
@@ -393,7 +393,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": "80",
     "infinitive": "ervaren",
     "imperfectum": [
       "ervoer",
@@ -408,7 +408,7 @@
     ]
   },
   {
-    "id": 81,
+    "id": "81",
     "infinitive": "eten",
     "imperfectum": [
       "at",
@@ -423,7 +423,7 @@
     ]
   },
   {
-    "id": 82,
+    "id": "82",
     "infinitive": "fluiten",
     "imperfectum": [
       "floot",
@@ -438,7 +438,7 @@
     ]
   },
   {
-    "id": 83,
+    "id": "83",
     "infinitive": "gaan",
     "imperfectum": [
       "ging",
@@ -453,7 +453,7 @@
     ]
   },
   {
-    "id": 88,
+    "id": "88",
     "infinitive": "genezen",
     "imperfectum": [
       "genas",
@@ -469,7 +469,7 @@
     ]
   },
   {
-    "id": 89,
+    "id": "89",
     "infinitive": "genieten",
     "imperfectum": [
       "genoot",
@@ -484,7 +484,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": "90",
     "infinitive": "geven",
     "imperfectum": [
       "gaf",
@@ -499,7 +499,7 @@
     ]
   },
   {
-    "id": 92,
+    "id": "92",
     "infinitive": "gieten",
     "imperfectum": [
       "goot",
@@ -514,7 +514,7 @@
     ]
   },
   {
-    "id": 93,
+    "id": "93",
     "infinitive": "glijden",
     "imperfectum": [
       "gleed",
@@ -530,7 +530,7 @@
     ]
   },
   {
-    "id": 94,
+    "id": "94",
     "infinitive": "glimmen",
     "imperfectum": [
       "glom",
@@ -545,7 +545,7 @@
     ]
   },
   {
-    "id": 95,
+    "id": "95",
     "infinitive": "graven",
     "imperfectum": [
       "groef",
@@ -560,7 +560,7 @@
     ]
   },
   {
-    "id": 97,
+    "id": "97",
     "infinitive": "hangen",
     "imperfectum": [
       "hing",
@@ -575,7 +575,7 @@
     ]
   },
   {
-    "id": 98,
+    "id": "98",
     "infinitive": "hebben",
     "imperfectum": [
       "had",
@@ -590,7 +590,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": "100",
     "infinitive": "helpen",
     "imperfectum": [
       "hielp",
@@ -605,7 +605,7 @@
     ]
   },
   {
-    "id": 113,
+    "id": "113",
     "infinitive": "heten",
     "imperfectum": [
       "heette",
@@ -620,7 +620,7 @@
     ]
   },
   {
-    "id": 116,
+    "id": "116",
     "infinitive": "houden",
     "imperfectum": [
       "hield",
@@ -635,7 +635,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": "120",
     "infinitive": "kiezen",
     "imperfectum": [
       "koos",
@@ -650,7 +650,7 @@
     ]
   },
   {
-    "id": 121,
+    "id": "121",
     "infinitive": "kijken",
     "imperfectum": [
       "keek",
@@ -665,7 +665,7 @@
     ]
   },
   {
-    "id": 124,
+    "id": "124",
     "infinitive": "klimmen",
     "imperfectum": [
       "klom",
@@ -681,7 +681,7 @@
     ]
   },
   {
-    "id": 125,
+    "id": "125",
     "infinitive": "klinken",
     "imperfectum": [
       "klonk",
@@ -696,7 +696,7 @@
     ]
   },
   {
-    "id": 127,
+    "id": "127",
     "infinitive": "knijpen",
     "imperfectum": [
       "kneep",
@@ -711,7 +711,7 @@
     ]
   },
   {
-    "id": 128,
+    "id": "128",
     "infinitive": "komen",
     "imperfectum": [
       "kwam",
@@ -726,7 +726,7 @@
     ]
   },
   {
-    "id": 129,
+    "id": "129",
     "infinitive": "kopen",
     "imperfectum": [
       "kocht",
@@ -741,7 +741,7 @@
     ]
   },
   {
-    "id": 130,
+    "id": "130",
     "infinitive": "krijgen",
     "imperfectum": [
       "kreeg",
@@ -756,7 +756,7 @@
     ]
   },
   {
-    "id": 133,
+    "id": "133",
     "infinitive": "krimpen",
     "imperfectum": [
       "kromp",
@@ -772,7 +772,7 @@
     ]
   },
   {
-    "id": 134,
+    "id": "134",
     "infinitive": "kruipen",
     "imperfectum": [
       "kroop",
@@ -788,7 +788,7 @@
     ]
   },
   {
-    "id": 135,
+    "id": "135",
     "infinitive": "kunnen",
     "imperfectum": [
       "kon",
@@ -803,7 +803,7 @@
     ]
   },
   {
-    "id": 137,
+    "id": "137",
     "infinitive": "lachen",
     "imperfectum": [
       "lachte",
@@ -818,7 +818,7 @@
     ]
   },
   {
-    "id": 138,
+    "id": "138",
     "infinitive": "laden",
     "imperfectum": [
       "laadde",
@@ -833,7 +833,7 @@
     ]
   },
   {
-    "id": 139,
+    "id": "139",
     "infinitive": "laten",
     "imperfectum": [
       "liet",
@@ -848,7 +848,7 @@
     ]
   },
   {
-    "id": 140,
+    "id": "140",
     "infinitive": "lezen",
     "imperfectum": [
       "las",
@@ -863,7 +863,7 @@
     ]
   },
   {
-    "id": 141,
+    "id": "141",
     "infinitive": "liegen",
     "imperfectum": [
       "loog",
@@ -878,7 +878,7 @@
     ]
   },
   {
-    "id": 142,
+    "id": "142",
     "infinitive": "liggen",
     "imperfectum": [
       "lag",
@@ -893,7 +893,7 @@
     ]
   },
   {
-    "id": 143,
+    "id": "143",
     "infinitive": "lijden",
     "imperfectum": [
       "leed",
@@ -908,7 +908,7 @@
     ]
   },
   {
-    "id": 144,
+    "id": "144",
     "infinitive": "lijken",
     "imperfectum": [
       "leek",
@@ -923,7 +923,7 @@
     ]
   },
   {
-    "id": 145,
+    "id": "145",
     "infinitive": "lopen",
     "imperfectum": [
       "liep",
@@ -939,7 +939,7 @@
     ]
   },
   {
-    "id": 149,
+    "id": "149",
     "infinitive": "meten",
     "imperfectum": [
       "mat",
@@ -954,7 +954,7 @@
     ]
   },
   {
-    "id": 152,
+    "id": "152",
     "infinitive": "moeten",
     "imperfectum": [
       "moest",
@@ -969,7 +969,7 @@
     ]
   },
   {
-    "id": 153,
+    "id": "153",
     "infinitive": "mogen",
     "imperfectum": [
       "mocht",
@@ -984,7 +984,7 @@
     ]
   },
   {
-    "id": 154,
+    "id": "154",
     "infinitive": "nemen",
     "imperfectum": [
       "nam",
@@ -999,7 +999,7 @@
     ]
   },
   {
-    "id": 158,
+    "id": "158",
     "infinitive": "ontbijten",
     "imperfectum": [
       "ontbeet",
@@ -1014,7 +1014,7 @@
     ]
   },
   {
-    "id": 186,
+    "id": "186",
     "infinitive": "ontwerpen",
     "imperfectum": [
       "ontwierp",
@@ -1029,7 +1029,7 @@
     ]
   },
   {
-    "id": 194,
+    "id": "194",
     "infinitive": "raden",
     "imperfectum": [
       "raadde",
@@ -1044,7 +1044,7 @@
     ]
   },
   {
-    "id": 196,
+    "id": "196",
     "infinitive": "rijden",
     "imperfectum": [
       "reed",
@@ -1060,7 +1060,7 @@
     ]
   },
   {
-    "id": 201,
+    "id": "201",
     "infinitive": "roepen",
     "imperfectum": [
       "riep",
@@ -1075,7 +1075,7 @@
     ]
   },
   {
-    "id": 202,
+    "id": "202",
     "infinitive": "ruiken",
     "imperfectum": [
       "rook",
@@ -1090,7 +1090,7 @@
     ]
   },
   {
-    "id": 203,
+    "id": "203",
     "infinitive": "scheiden",
     "imperfectum": [
       "scheidde",
@@ -1106,7 +1106,7 @@
     ]
   },
   {
-    "id": 204,
+    "id": "204",
     "infinitive": "schelden",
     "imperfectum": [
       "schold",
@@ -1121,7 +1121,7 @@
     ]
   },
   {
-    "id": 206,
+    "id": "206",
     "infinitive": "schenken",
     "imperfectum": [
       "schonk",
@@ -1136,7 +1136,7 @@
     ]
   },
   {
-    "id": 208,
+    "id": "208",
     "infinitive": "scheren",
     "imperfectum": [
       "schoor",
@@ -1151,7 +1151,7 @@
     ]
   },
   {
-    "id": 209,
+    "id": "209",
     "infinitive": "schieten",
     "imperfectum": [
       "schoot",
@@ -1166,7 +1166,7 @@
     ]
   },
   {
-    "id": 210,
+    "id": "210",
     "infinitive": "schijnen",
     "imperfectum": [
       "scheen",
@@ -1181,7 +1181,7 @@
     ]
   },
   {
-    "id": 213,
+    "id": "213",
     "infinitive": "schrijven",
     "imperfectum": [
       "schreef",
@@ -1196,7 +1196,7 @@
     ]
   },
   {
-    "id": 214,
+    "id": "214",
     "infinitive": "schrikken",
     "imperfectum": [
       "schrok",
@@ -1211,7 +1211,7 @@
     ]
   },
   {
-    "id": 216,
+    "id": "216",
     "infinitive": "schuiven",
     "imperfectum": [
       "schoof",
@@ -1227,7 +1227,7 @@
     ]
   },
   {
-    "id": 217,
+    "id": "217",
     "infinitive": "slaan",
     "imperfectum": [
       "sloeg",
@@ -1242,7 +1242,7 @@
     ]
   },
   {
-    "id": 218,
+    "id": "218",
     "infinitive": "slapen",
     "imperfectum": [
       "sliep",
@@ -1257,7 +1257,7 @@
     ]
   },
   {
-    "id": 219,
+    "id": "219",
     "infinitive": "slijpen",
     "imperfectum": [
       "sleep",
@@ -1272,7 +1272,7 @@
     ]
   },
   {
-    "id": 222,
+    "id": "222",
     "infinitive": "sluipen",
     "imperfectum": [
       "sloop",
@@ -1287,7 +1287,7 @@
     ]
   },
   {
-    "id": 223,
+    "id": "223",
     "infinitive": "sluiten",
     "imperfectum": [
       "sloot",
@@ -1302,7 +1302,7 @@
     ]
   },
   {
-    "id": 224,
+    "id": "224",
     "infinitive": "smelten",
     "imperfectum": [
       "smolt",
@@ -1317,7 +1317,7 @@
     ]
   },
   {
-    "id": 226,
+    "id": "226",
     "infinitive": "snijden",
     "imperfectum": [
       "sneed",
@@ -1332,7 +1332,7 @@
     ]
   },
   {
-    "id": 227,
+    "id": "227",
     "infinitive": "snuiten",
     "imperfectum": [
       "snoot",
@@ -1347,7 +1347,7 @@
     ]
   },
   {
-    "id": 228,
+    "id": "228",
     "infinitive": "snuiven",
     "imperfectum": [
       "snoof",
@@ -1362,7 +1362,7 @@
     ]
   },
   {
-    "id": 230,
+    "id": "230",
     "infinitive": "spijten",
     "imperfectum": [
       "speet",
@@ -1377,7 +1377,7 @@
     ]
   },
   {
-    "id": 233,
+    "id": "233",
     "infinitive": "spreken",
     "imperfectum": [
       "sprak",
@@ -1392,7 +1392,7 @@
     ]
   },
   {
-    "id": 234,
+    "id": "234",
     "infinitive": "springen",
     "imperfectum": [
       "sprong",
@@ -1408,7 +1408,7 @@
     ]
   },
   {
-    "id": 237,
+    "id": "237",
     "infinitive": "spuiten",
     "imperfectum": [
       "spoot",
@@ -1423,7 +1423,7 @@
     ]
   },
   {
-    "id": 238,
+    "id": "238",
     "infinitive": "staan",
     "imperfectum": [
       "stond",
@@ -1438,7 +1438,7 @@
     ]
   },
   {
-    "id": 239,
+    "id": "239",
     "infinitive": "steken",
     "imperfectum": [
       "stak",
@@ -1453,7 +1453,7 @@
     ]
   },
   {
-    "id": 240,
+    "id": "240",
     "infinitive": "stelen",
     "imperfectum": [
       "stal",
@@ -1468,7 +1468,7 @@
     ]
   },
   {
-    "id": 241,
+    "id": "241",
     "infinitive": "sterven",
     "imperfectum": [
       "stierf",
@@ -1483,7 +1483,7 @@
     ]
   },
   {
-    "id": 242,
+    "id": "242",
     "infinitive": "stijgen",
     "imperfectum": [
       "steeg",
@@ -1498,7 +1498,7 @@
     ]
   },
   {
-    "id": 244,
+    "id": "244",
     "infinitive": "stinken",
     "imperfectum": [
       "stonk",
@@ -1513,7 +1513,7 @@
     ]
   },
   {
-    "id": 246,
+    "id": "246",
     "infinitive": "strijden",
     "imperfectum": [
       "streed",
@@ -1528,7 +1528,7 @@
     ]
   },
   {
-    "id": 247,
+    "id": "247",
     "infinitive": "strijken",
     "imperfectum": [
       "streek",
@@ -1543,7 +1543,7 @@
     ]
   },
   {
-    "id": 252,
+    "id": "252",
     "infinitive": "trekken",
     "imperfectum": [
       "trok",
@@ -1559,7 +1559,7 @@
     ]
   },
   {
-    "id": 253,
+    "id": "253",
     "infinitive": "vallen",
     "imperfectum": [
       "viel",
@@ -1574,7 +1574,7 @@
     ]
   },
   {
-    "id": 254,
+    "id": "254",
     "infinitive": "vangen",
     "imperfectum": [
       "ving",
@@ -1589,7 +1589,7 @@
     ]
   },
   {
-    "id": 255,
+    "id": "255",
     "infinitive": "varen",
     "imperfectum": [
       "vaarde",
@@ -1605,7 +1605,7 @@
     ]
   },
   {
-    "id": 256,
+    "id": "256",
     "infinitive": "varen",
     "imperfectum": [
       "voer",
@@ -1621,7 +1621,7 @@
     ]
   },
   {
-    "id": 257,
+    "id": "257",
     "infinitive": "vechten",
     "imperfectum": [
       "vocht",
@@ -1636,7 +1636,7 @@
     ]
   },
   {
-    "id": 260,
+    "id": "260",
     "infinitive": "verbieden",
     "imperfectum": [
       "verbood",
@@ -1651,7 +1651,7 @@
     ]
   },
   {
-    "id": 270,
+    "id": "270",
     "infinitive": "verdwijnen",
     "imperfectum": [
       "verdween",
@@ -1666,7 +1666,7 @@
     ]
   },
   {
-    "id": 272,
+    "id": "272",
     "infinitive": "vergelijken",
     "imperfectum": [
       "vergeleek",
@@ -1681,7 +1681,7 @@
     ]
   },
   {
-    "id": 273,
+    "id": "273",
     "infinitive": "vergeten",
     "imperfectum": [
       "vergat",
@@ -1697,7 +1697,7 @@
     ]
   },
   {
-    "id": 285,
+    "id": "285",
     "infinitive": "verliezen",
     "imperfectum": [
       "verloor",
@@ -1713,7 +1713,7 @@
     ]
   },
   {
-    "id": 287,
+    "id": "287",
     "infinitive": "vermijden",
     "imperfectum": [
       "vermeed",
@@ -1728,7 +1728,7 @@
     ]
   },
   {
-    "id": 288,
+    "id": "288",
     "infinitive": "verraden",
     "imperfectum": [
       "verraadde",
@@ -1743,7 +1743,7 @@
     ]
   },
   {
-    "id": 303,
+    "id": "303",
     "infinitive": "vertrekken",
     "imperfectum": [
       "vertrok",
@@ -1758,7 +1758,7 @@
     ]
   },
   {
-    "id": 306,
+    "id": "306",
     "infinitive": "verwijten",
     "imperfectum": [
       "verweet",
@@ -1773,7 +1773,7 @@
     ]
   },
   {
-    "id": 309,
+    "id": "309",
     "infinitive": "verzinnen",
     "imperfectum": [
       "verzon",
@@ -1788,7 +1788,7 @@
     ]
   },
   {
-    "id": 316,
+    "id": "316",
     "infinitive": "vinden",
     "imperfectum": [
       "vond",
@@ -1803,7 +1803,7 @@
     ]
   },
   {
-    "id": 319,
+    "id": "319",
     "infinitive": "vliegen",
     "imperfectum": [
       "vloog",
@@ -1819,7 +1819,7 @@
     ]
   },
   {
-    "id": 321,
+    "id": "321",
     "infinitive": "vouwen",
     "imperfectum": [
       "vouwde",
@@ -1834,7 +1834,7 @@
     ]
   },
   {
-    "id": 322,
+    "id": "322",
     "infinitive": "vragen",
     "imperfectum": [
       "vroeg",
@@ -1849,7 +1849,7 @@
     ]
   },
   {
-    "id": 324,
+    "id": "324",
     "infinitive": "vriezen",
     "imperfectum": [
       "vroor",
@@ -1864,7 +1864,7 @@
     ]
   },
   {
-    "id": 327,
+    "id": "327",
     "infinitive": "wassen",
     "imperfectum": [
       "wies",
@@ -1880,7 +1880,7 @@
     ]
   },
   {
-    "id": 328,
+    "id": "328",
     "infinitive": "wassen",
     "imperfectum": [
       "waste",
@@ -1896,7 +1896,7 @@
     ]
   },
   {
-    "id": 329,
+    "id": "329",
     "infinitive": "wegen",
     "imperfectum": [
       "woog",
@@ -1911,7 +1911,7 @@
     ]
   },
   {
-    "id": 330,
+    "id": "330",
     "infinitive": "werpen",
     "imperfectum": [
       "wierp",
@@ -1926,7 +1926,7 @@
     ]
   },
   {
-    "id": 332,
+    "id": "332",
     "infinitive": "weten",
     "imperfectum": [
       "wist",
@@ -1941,7 +1941,7 @@
     ]
   },
   {
-    "id": 336,
+    "id": "336",
     "infinitive": "wijzen",
     "imperfectum": [
       "wees",
@@ -1956,7 +1956,7 @@
     ]
   },
   {
-    "id": 337,
+    "id": "337",
     "infinitive": "willen",
     "imperfectum": [
       "wou",
@@ -1971,7 +1971,7 @@
     ]
   },
   {
-    "id": 339,
+    "id": "339",
     "infinitive": "winnen",
     "imperfectum": [
       "won",
@@ -1986,7 +1986,7 @@
     ]
   },
   {
-    "id": 340,
+    "id": "340",
     "infinitive": "worden",
     "imperfectum": [
       "werd",
@@ -2001,7 +2001,7 @@
     ]
   },
   {
-    "id": 342,
+    "id": "342",
     "infinitive": "wrijven",
     "imperfectum": [
       "wreef",
@@ -2016,7 +2016,7 @@
     ]
   },
   {
-    "id": 344,
+    "id": "344",
     "infinitive": "zeggen",
     "imperfectum": [
       "zei",
@@ -2031,7 +2031,7 @@
     ]
   },
   {
-    "id": 346,
+    "id": "346",
     "infinitive": "zenden",
     "imperfectum": [
       "zond",
@@ -2046,7 +2046,7 @@
     ]
   },
   {
-    "id": 348,
+    "id": "348",
     "infinitive": "zien",
     "imperfectum": [
       "zag",
@@ -2061,7 +2061,7 @@
     ]
   },
   {
-    "id": 350,
+    "id": "350",
     "infinitive": "zijn",
     "imperfectum": [
       "was",
@@ -2076,7 +2076,7 @@
     ]
   },
   {
-    "id": 351,
+    "id": "351",
     "infinitive": "zingen",
     "imperfectum": [
       "zong",
@@ -2091,7 +2091,7 @@
     ]
   },
   {
-    "id": 352,
+    "id": "352",
     "infinitive": "zinken",
     "imperfectum": [
       "zonk",
@@ -2106,7 +2106,7 @@
     ]
   },
   {
-    "id": 354,
+    "id": "354",
     "infinitive": "zitten",
     "imperfectum": [
       "zat",
@@ -2121,7 +2121,7 @@
     ]
   },
   {
-    "id": 355,
+    "id": "355",
     "infinitive": "zoeken",
     "imperfectum": [
       "zocht",
@@ -2136,7 +2136,7 @@
     ]
   },
   {
-    "id": 357,
+    "id": "357",
     "infinitive": "zuigen",
     "imperfectum": [
       "zoog",
@@ -2151,7 +2151,7 @@
     ]
   },
   {
-    "id": 359,
+    "id": "359",
     "infinitive": "zullen",
     "imperfectum": [
       "zou",
@@ -2166,7 +2166,7 @@
     ]
   },
   {
-    "id": 362,
+    "id": "362",
     "infinitive": "zwemmen",
     "imperfectum": [
       "zwom",
@@ -2182,7 +2182,7 @@
     ]
   },
   {
-    "id": 366,
+    "id": "366",
     "infinitive": "zwijgen",
     "imperfectum": [
       "zweeg",
@@ -2197,7 +2197,7 @@
     ]
   },
   {
-    "id": 377,
+    "id": "377",
     "infinitive": "overlijden",
     "imperfectum": [
       "overleed",

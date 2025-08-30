@@ -4,24 +4,16 @@ import type { VerbInfo } from "./VerbTypes";
 import selected from '../assets/selected.json';
 import werkworden from '../assets/werkwoorden.json';
 
-const parseWerkworden = (input: string[][]): VerbInfo[] => {
-  return input.map(((row: string[]) => {
-    return {
-      infinitive: row[0],
-      imperfectum: row[2].split('|'),
-      participium: row[3].split('|'),
-      meaning: row[4].split('|').join(', ')
-    } as VerbInfo;
-  }));
-};
 
 const selectedDictionary = new Set(selected);
 
-const allWerkworden: VerbInfo[] = parseWerkworden(werkworden).filter((verb: VerbInfo) => {
+const allWerkworden: VerbInfo[] = werkworden as VerbInfo[];
+
+const selectedWerkworden = allWerkworden.filter((verb: VerbInfo) => {
   return selectedDictionary.has(verb.infinitive);
 });
 
-const N = allWerkworden.length;
+const N = selectedWerkworden.length;
 const start = Math.round(Math.random() * (N+1)) % N;
 
 export function useVerbProvider(): [VerbInfo | null, () => void] {
@@ -35,7 +27,7 @@ export function useVerbProvider(): [VerbInfo | null, () => void] {
   }, [index]);
 
   useEffect(() => {
-    setVerb(allWerkworden[index]);
+    setVerb(selectedWerkworden[index]);
   }, [index]);
 
   return [verb, next] as const;

@@ -1,6 +1,8 @@
 export interface VerbInfo {
+  id: string;
   infinitive: string;
-  meaning: string;
   imperfectum: [string, string];
-  participium: string[]
+  perfectum: string[];
+  vertaling: string;
+  hulpWerkwoorden: string[];
 }

@@ -14,7 +14,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
 
   const [checked, setChecked] = useState(false);
   const [inputs, setInputs] = useState({ impSing: "", impPlur: "", part: "" });
-  
+
   const firstInputRef = useRef<HTMLInputElement>(null);
 
   const reset = () => {
@@ -50,7 +50,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
   const isValid = {
     impSing: isCorrect(inputs.impSing, [current.imperfectum[0]]),
     impPlur: isCorrect(inputs.impPlur, [current.imperfectum[1]]),
-    part: isCorrect(inputs.part, current.participium),
+    part: isCorrect(inputs.part, current?.perfectum),
   };
 
   const isValidTotal = (
@@ -83,16 +83,27 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
     );
   }
 
+  let wordColor = '';
+
+  if (current.hulpWerkwoorden.includes('zijn')) {
+    wordColor = '#cc0700';
+  } else if (current.hulpWerkwoorden.includes('hebben')) {
+    wordColor = '#005632';
+  }
+
   return (
     <Card sx={{ width: 400, p: 3, borderRadius: 4, boxShadow: 3 }}>
       <CardContent>
         <form onSubmit={onSubmit}>
           <Typography variant="h4" gutterBottom>
-            {current.infinitive} <Typography variant="body2" component="span">({current.meaning})</Typography>
+            <span style={{
+              color: wordColor
+            }}>{current.infinitive}</span>
+            <Typography variant="body2" component="span">({current.vertaling})</Typography>
           </Typography>
 
           <Typography variant="subtitle1" sx={{ mt: 2 }}>Imperfectum</Typography>
-          <VerbControl 
+          <VerbControl
             id="impSing"
             label="Singular (hij / zij / het)"
             value={inputs.impSing}
@@ -102,7 +113,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
             isChecked={checked}
             ref={firstInputRef}
           />
-          <VerbControl 
+          <VerbControl
             id="impPlur"
             label="Plural (wij / zij / jullie)"
             value={inputs.impPlur}
@@ -112,14 +123,16 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
             isChecked={checked}
           />
 
-          <Typography variant="subtitle1" sx={{ mt: 2 }}>Perfectum</Typography>
-          <VerbControl 
+          <Typography variant="subtitle1" sx={{ mt: 2 }}>
+            Perfectum <Typography variant="body2" component="span">({current.hulpWerkwoorden.join('/')})</Typography>
+          </Typography>
+          <VerbControl
             id="part"
             label="Participium"
             value={inputs.part}
             onChange={handleChange('part')}
             isCorrect={isValid.part}
-            correct={current.participium.join(', ')}
+            correct={current.perfectum.join(', ')}
             isChecked={checked}
           />
 

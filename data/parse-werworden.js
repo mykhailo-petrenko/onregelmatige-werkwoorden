@@ -24,7 +24,7 @@ let outputRows = source.map(((row, index) => {
   }
 
   return {
-    id: (index + 1),
+    id: `${(index + 1)}`,
     infinitive: row[0],
     imperfectum: row[2].split('|'),
     perfectum: row[3].split('|'),

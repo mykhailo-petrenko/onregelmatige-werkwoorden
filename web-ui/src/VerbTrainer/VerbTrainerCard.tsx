@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC } from 'react';
+import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo } from 'react';
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import type { VerbInfo } from "./VerbTypes";
 import { VerbControl } from './VerbControl';
@@ -9,7 +9,7 @@ export interface VerbTrainerCardProps {
   onNext: () => void;
 }
 
-export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCard(props: VerbTrainerCardProps) {
+export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrainerCard(props: VerbTrainerCardProps) {
   const current = props?.current;
 
   const [checked, setChecked] = useState(false);
@@ -143,6 +143,6 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = function VerbTrainerCar
       </CardContent>
     </Card>
   );
-}
+});
 
 export default VerbTrainerCard;

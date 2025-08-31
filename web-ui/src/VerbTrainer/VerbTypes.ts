@@ -6,3 +6,9 @@ export interface VerbInfo {
   vertaling: string;
   hulpWerkwoorden: string[];
 }
+
+export interface VerbList {
+  id: string;
+  label: string;
+  items: VerbInfo[];
+}

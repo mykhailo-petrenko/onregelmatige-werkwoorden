@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { VerbInfo } from "./VerbTypes";
+import type { VerbInfo, VerbList } from './VerbTypes';
 
 import selected from '../assets/selected.json';
 import werkworden from '../assets/werkwoorden.json';
@@ -13,22 +13,62 @@ const selectedWerkworden = allWerkworden.filter((verb: VerbInfo) => {
   return selectedDictionary.has(verb.infinitive);
 });
 
-const N = selectedWerkworden.length;
-const start = Math.round(Math.random() * (N+1)) % N;
-
-export function useVerbProvider(): [VerbInfo | null, () => void] {
+export function useVerbProvider(list: VerbList | null): [VerbInfo | null, () => void] {
   const [verb, setVerb] = useState<VerbInfo | null>(null);
-  const [index, setIndex] = useState<number>(start);
+  const [index, setIndex] = useState<number>(-1);
 
   const next = useCallback(() => {
-    const next = Math.round(Math.random() * (N+1));
-    // const next = (index + 1);
-    setIndex(next % N);
-  }, [index]);
+    if (!list) {
+      return;
+    }
+
+    const N = list.items.length;
+    const nextIndex = Math.round(Math.random() * (N));
+
+    setIndex(nextIndex % N);
+  }, [list]);
 
   useEffect(() => {
-    setVerb(selectedWerkworden[index]);
-  }, [index]);
+    if (!list) {
+      return;
+    }
+
+    setVerb(list.items[index]);
+  }, [index, list]);
+
+  useEffect(() => {
+    next();
+  }, [next]);
 
   return [verb, next] as const;
-};
+}
+
+const DEFAULT_LIST: VerbList[] = [
+  {
+    id: '1',
+    label: 'All',
+    items: allWerkworden,
+  },
+  {
+    id: '2',
+    label: 'My',
+    items: selectedWerkworden,
+  }
+];
+
+export function useWordLists() {
+  const [list, setList] = useState(DEFAULT_LIST)
+
+  const create = useCallback(() => {
+    setList([...list]);
+  }, [list, setList]);
+  const update = useCallback(() => {
+    setList([...list]);
+  }, [list, setList]);
+  const remove = useCallback(() => {
+    setList([...list]);
+  }, [list, setList]);
+
+
+  return [list, create, update, remove] as const;
+}

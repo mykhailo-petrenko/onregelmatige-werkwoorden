@@ -25,7 +25,7 @@ export function Nav() {
         <Button
           component={NavLink}
           color="inherit"
-          to="/lists/0"
+          to="/lists"
         >Lists</Button>
         <Button
           component={NavLink}

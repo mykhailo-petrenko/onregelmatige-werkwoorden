@@ -59,6 +59,10 @@ export function useWordListProvider() {
   }, [currentList, currentWord, setCurrentWord]);
 }
 
+export function useCurrentLearnList() {
+  const [currentListPersistence, ] = useAtom(currentWordList);
+  return useExtractList(currentListPersistence);
+}
 
 export function useLearnList(id?: string) {
   const [, setCurrentWordList ] = useAtom(currentWordList);

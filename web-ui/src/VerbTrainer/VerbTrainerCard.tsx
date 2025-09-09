@@ -1,12 +1,21 @@
 import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo } from 'react';
-import { Box, Button, Card, CardContent, Typography } from "@mui/material";
-import type { VerbInfo } from "./VerbTypes";
+import { Box, Button, Card, CardContent, Typography, Skeleton } from "@mui/material";
+import type { VerbInfo } from "../Lists/types.ts";
 import { VerbControl } from './VerbControl';
 
-
 export interface VerbTrainerCardProps {
-  current: VerbInfo;
+  current: VerbInfo | null;
   onNext: () => void;
+}
+
+export function VerbTrainerCardSkeleton() {
+  return (
+    <Card sx={{ width: 400, p: 3, borderRadius: 4, boxShadow: 3 }}>
+      <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
+      <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
+      <Skeleton variant="text" sx={{ fontSize: '2rem' }} />
+    </Card>
+  );
 }
 
 export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrainerCard(props: VerbTrainerCardProps) {
@@ -47,16 +56,6 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
     setChecked(true);
   };
 
-  const isValid = {
-    impSing: isCorrect(inputs.impSing, [current.imperfectum[0]]),
-    impPlur: isCorrect(inputs.impPlur, [current.imperfectum[1]]),
-    part: isCorrect(inputs.part, current?.perfectum),
-  };
-
-  const isValidTotal = (
-    isValid.impSing && isValid.impPlur && isValid.part
-  );
-
   const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -68,8 +67,18 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   };
 
   if (!current) {
-    return null;
+    return <VerbTrainerCardSkeleton />;
   }
+
+  const isValid = {
+    impSing: isCorrect(inputs.impSing, [current?.imperfectum[0]]),
+    impPlur: isCorrect(inputs.impPlur, [current?.imperfectum[1]]),
+    part: isCorrect(inputs.part, current?.perfectum),
+  };
+
+  const isValidTotal = (
+    isValid.impSing && isValid.impPlur && isValid.part
+  );
 
   const controls = [];
 
@@ -96,10 +105,8 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
       <CardContent>
         <form onSubmit={onSubmit}>
           <Typography variant="h4" gutterBottom>
-            <span style={{
-              color: wordColor
-            }}>{current.infinitive}</span>
-            <Typography variant="body2" component="span">({current.vertaling})</Typography>
+            {current.infinitive}
+            &nbsp;<Typography variant="body2" component="span">({current.vertaling})</Typography>
           </Typography>
 
           <Typography variant="subtitle1" sx={{ mt: 2 }}>Imperfectum</Typography>
@@ -124,7 +131,11 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
           />
 
           <Typography variant="subtitle1" sx={{ mt: 2 }}>
-            Perfectum <Typography variant="body2" component="span">({current.hulpWerkwoorden.join('/')})</Typography>
+            Perfectum <Typography
+                        variant="body2"
+                        component="span"
+                        style={{ color: wordColor }}
+                      >({current.hulpWerkwoorden.join('/')})</Typography>
           </Typography>
           <VerbControl
             id="part"

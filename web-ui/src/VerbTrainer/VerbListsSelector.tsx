@@ -1,6 +1,6 @@
 import { ButtonGroup, Button } from '@mui/material';
 // import AddIcon from '@mui/icons-material/Add';
-import type { VerbList } from './VerbTypes.ts';
+import type { VerbList } from '../Lists/types.ts';
 import { memo } from 'react';
 
 export interface VerListsSelectorProps {

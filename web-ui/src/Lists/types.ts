@@ -8,7 +8,17 @@ export interface VerbInfo {
 }
 
 export interface VerbList {
-  id: string;
+  id?: string;
   label: string;
   items: VerbInfo[];
 }
+
+export type VerbListCollection = VerbList[];
+
+export interface VerbListPersistence {
+  id?: string;
+  label: string;
+  items: string[];
+}
+
+export type VerbListPersistenceCollection = VerbListPersistence[];

@@ -2,15 +2,11 @@ import { useCallback, useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import type { VerbInfo, VerbListPersistence } from './types.ts';
-import { ALL_WORDS_IDS } from './words.ts';
+import { DEFAULT_LISTS } from './words.ts';
 import { useExtractList, useListPersistenceById } from './manageLists.ts';
 
 
-const DEFAULT_WORDS_LIST: VerbListPersistence = {
-  id: '0',
-  label: 'All',
-  items: ALL_WORDS_IDS,
-};
+const DEFAULT_WORDS_LIST: VerbListPersistence = DEFAULT_LISTS[0];
 
 export const currentWerkWord = atomWithStorage<VerbInfo | null>(
   'currentWerkWord',

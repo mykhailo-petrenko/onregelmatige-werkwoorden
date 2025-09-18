@@ -1598,11 +1598,12 @@
     "perfectum": [
       "gevaren"
     ],
-    "vertaling": "to fare",
+    "vertaling": "to fare (varen = gaan, zich gedragen, vergaan (oud, literair of formeel))",
     "hulpWerkwoorden": [
       "zijn",
       "hebben"
-    ]
+    ],
+    "context": "varen = gaan, zich gedragen, vergaan (oud, literair of formeel)"
   },
   {
     "id": "256",
@@ -1614,11 +1615,12 @@
     "perfectum": [
       "gevaren"
     ],
-    "vertaling": "to sail",
+    "vertaling": "to sail (varen = zich met een schip of boot voortbewegen)",
     "hulpWerkwoorden": [
       "zijn",
       "hebben"
-    ]
+    ],
+    "context": "varen = zich met een schip of boot voortbewegen"
   },
   {
     "id": "257",
@@ -1873,11 +1875,12 @@
     "perfectum": [
       "gewassen"
     ],
-    "vertaling": "to grow",
+    "vertaling": "to grow (wassen = groeien, groter worden / ontwikkelen, gedijen)",
     "hulpWerkwoorden": [
       "zijn",
       "hebben"
-    ]
+    ],
+    "context": "wassen = groeien, groter worden / ontwikkelen, gedijen"
   },
   {
     "id": "328",
@@ -1889,11 +1892,12 @@
     "perfectum": [
       "gewassen"
     ],
-    "vertaling": "to wash",
+    "vertaling": "to wash (wassen = schoonmaken met water/zeep)",
     "hulpWerkwoorden": [
       "zijn",
       "hebben"
-    ]
+    ],
+    "context": "wassen = schoonmaken met water/zeep"
   },
   {
     "id": "329",

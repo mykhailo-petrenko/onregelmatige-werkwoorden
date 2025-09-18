@@ -13,5 +13,5 @@ const wordsRaw = fs.readFileSync(db);
 const rows = JSON.parse(wordsRaw);
 
 for (const row of rows) {
-  console.log(`"${row.infinitive}", "${row.imperfectum.join(',')}", "${row.perfectum.join(',')}", "${row.hulpWerkwoorden.join(',')}"`);
+  console.log(`"${row.id}", "${row.infinitive}", "${row.imperfectum.join(',')}", "${row.perfectum.join(',')}", "${row.hulpWerkwoorden.join(',')}"`);
 }

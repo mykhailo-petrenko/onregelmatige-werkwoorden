@@ -1,13 +1,15 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
+import { useAtom, atom } from 'jotai';
 
 const DB_NAME = 'onregelmatige_werkwoorden';
 const DB_VERSION = 1;
 const WORDS_STORE = 'words';
 const STATS_STORE = 'stats';
 
-export type WordBucket = {
-  bucketId: number; // 1..5
-};
+const MIN_BUCKET = 1;
+const MAX_BUCKET = 5;
+
+export type WordBucket = number;
 
 export type LearnStat = {
   id: string; // word id
@@ -15,8 +17,10 @@ export type LearnStat = {
   timestamp: number;
 };
 
+const indexDBAtom = atom<IDBDatabase | null>(null);
+
 export function useIndexedDb() {
-  const [db, setDb] = useState<IDBDatabase | null>(null);
+  const [db, setDb] = useAtom<IDBDatabase | null>(indexDBAtom);
 
   // Open database
   useEffect(() => {
@@ -45,10 +49,10 @@ export function useIndexedDb() {
     request.onerror = () => {
       console.error('IndexedDB error:', request.error);
     };
-  }, []);
+  }, [setDb]);
 
   // Helpers
-  const getTx = useCallback(
+  const getTransaction = useCallback(
     (storeName: string, mode: IDBTransactionMode = 'readonly') => {
       if (!db) throw new Error('DB not initialized');
       return db.transaction(storeName, mode).objectStore(storeName);
@@ -61,7 +65,7 @@ export function useIndexedDb() {
     (id: string, value: WordBucket) =>
       new Promise<void>((resolve, reject) => {
         try {
-          const store = getTx(WORDS_STORE, 'readwrite');
+          const store = getTransaction(WORDS_STORE, 'readwrite');
           const req = store.put(value, id);
           req.onsuccess = () => resolve();
           req.onerror = () => reject(req.error);
@@ -69,22 +73,25 @@ export function useIndexedDb() {
           reject(e);
         }
       }),
-    [getTx]
+    [getTransaction]
   );
 
   const getWordBucket = useCallback(
-    (id: string) =>
-      new Promise<WordBucket | undefined>((resolve, reject) => {
+    (id: string) => {
+      return new Promise<WordBucket>((resolve, reject) => {
+        const default_bucket = 1;
+
         try {
-          const store = getTx(WORDS_STORE);
+          const store = getTransaction(WORDS_STORE);
           const req = store.get(id);
-          req.onsuccess = () => resolve(req.result as WordBucket | undefined);
+          req.onsuccess = () => resolve((req.result || default_bucket) as WordBucket);
           req.onerror = () => reject(req.error);
         } catch (e) {
           reject(e);
         }
-      }),
-    [getTx]
+      })
+    },
+    [getTransaction]
   );
 
   // --- learnStats ---
@@ -92,7 +99,7 @@ export function useIndexedDb() {
     (stat: LearnStat) =>
       new Promise<number>((resolve, reject) => {
         try {
-          const store = getTx(STATS_STORE, 'readwrite');
+          const store = getTransaction(STATS_STORE, 'readwrite');
           const req = store.add(stat);
           req.onsuccess = () => resolve(req.result as number);
           req.onerror = () => reject(req.error);
@@ -100,14 +107,14 @@ export function useIndexedDb() {
           reject(e);
         }
       }),
-    [getTx]
+    [getTransaction]
   );
 
   const getStatsByWordId = useCallback(
     (wordId: string) =>
       new Promise<LearnStat[]>((resolve, reject) => {
         try {
-          const store = getTx(STATS_STORE);
+          const store = getTransaction(STATS_STORE);
           const index = store.index('id');
           const req = index.getAll(wordId);
           req.onsuccess = () => resolve(req.result as LearnStat[]);
@@ -116,7 +123,7 @@ export function useIndexedDb() {
           reject(e);
         }
       }),
-    [getTx]
+    [getTransaction]
   );
 
   return {
@@ -126,4 +133,33 @@ export function useIndexedDb() {
     addLearnStat,
     getStatsByWordId,
   };
+}
+
+export function useUpdateWordStats() {
+  const {ready, getWordBucket, setWordBucket, addLearnStat} = useIndexedDb();
+
+  return useCallback(function updateWordStats(wordId: string, isValid: boolean) {
+    (async () => {
+      if (!ready) {
+        console.error(`skip update, db is not ready. ${wordId}.`);
+        return;
+      }
+
+      const timestamp = (new Date()).getTime();
+      let bucket = await getWordBucket(wordId);
+
+      if (isValid) {
+        bucket = Math.min(bucket+1, MAX_BUCKET);
+      } else {
+        bucket = Math.max(bucket-1, MIN_BUCKET);
+      }
+
+      await setWordBucket(wordId, bucket);
+      await addLearnStat({
+        id: wordId,
+        correct: isValid,
+        timestamp: timestamp
+      })
+    })();
+  }, [ready, getWordBucket, setWordBucket, addLearnStat]);
 }

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, me
 import { Box, Button, Card, CardContent, Typography, Skeleton } from "@mui/material";
 import type { VerbInfo } from "../Lists/types.ts";
 import { VerbControl } from './VerbControl';
+import { useUpdateWordStats } from '../Lists/statsStorage.ts';
 
 export interface VerbTrainerCardProps {
   current: VerbInfo | null;
@@ -23,6 +24,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
 
   const [checked, setChecked] = useState(false);
   const [inputs, setInputs] = useState({ impSing: "", impPlur: "", part: "" });
+  const updateWordStats = useUpdateWordStats();
 
   const firstInputRef = useRef<HTMLInputElement>(null);
 
@@ -40,9 +42,23 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
     setInputs({ ...inputs, [fieldName]: e.target.value });
   }, [inputs]);
 
-  const isCorrect = (answer: string, expected: string[]) => {
+  const isCorrect = (answer: string, expected: string[] | null) => {
+    if (expected === null) {
+      return false;
+    }
+
     return expected.includes(answer.trim().toLowerCase());
   };
+
+  const isValid = {
+    impSing: isCorrect(inputs.impSing, current && [current.imperfectum[0]]),
+    impPlur: isCorrect(inputs.impPlur, current && [current.imperfectum[1]]),
+    part: isCorrect(inputs.part, current && current.perfectum),
+  };
+
+  const isValidTotal = (
+    isValid.impSing && isValid.impPlur && isValid.part
+  );
 
   const onNext = () => {
     reset();
@@ -53,7 +69,12 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   };
 
   const checkAnswers = () => {
+    if (!current) {
+      return;
+    }
+
     setChecked(true);
+    updateWordStats(current.id, isValidTotal);
   };
 
   const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
@@ -69,16 +90,6 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   if (!current) {
     return <VerbTrainerCardSkeleton />;
   }
-
-  const isValid = {
-    impSing: isCorrect(inputs.impSing, [current?.imperfectum[0]]),
-    impPlur: isCorrect(inputs.impPlur, [current?.imperfectum[1]]),
-    part: isCorrect(inputs.part, current?.perfectum),
-  };
-
-  const isValidTotal = (
-    isValid.impSing && isValid.impPlur && isValid.part
-  );
 
   const controls = [];
 

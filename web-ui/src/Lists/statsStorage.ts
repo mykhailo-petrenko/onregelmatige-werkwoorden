@@ -1,15 +1,15 @@
 import { useEffect, useCallback } from 'react';
 import { useAtom, atom } from 'jotai';
+import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 
 const DB_NAME = 'onregelmatige_werkwoorden';
 const DB_VERSION = 1;
 const WORDS_STORE = 'words';
 const STATS_STORE = 'stats';
 
-const MIN_BUCKET = 1;
-const MAX_BUCKET = 5;
-
-export type WordBucket = number;
+export const MIN_BUCKET = 1;
+export const MAX_BUCKET = 5;
+export const DEFAULT_BUCKET = MIN_BUCKET;
 
 export type LearnStat = {
   id: string; // word id
@@ -17,7 +17,39 @@ export type LearnStat = {
   timestamp: number;
 };
 
+// save all available "id" => "probability" and "total"
+export type WordBuckets = {[key: string]: number };
+
+const wordBuckets = atomWithStorage<WordBuckets>(
+  'wordBuckets',
+  {},
+  createJSONStorage(),
+  { getOnInit: true }
+);
+
 const indexDBAtom = atom<IDBDatabase | null>(null);
+
+export function useWordBuckets() {
+  const [buckets, setBuckets] = useAtom(wordBuckets);
+
+  const setWordBucket = useCallback(
+    (id: string, value: number) => {
+      setBuckets({
+        ...buckets,
+        [id]: value,
+      });
+    }, [buckets, setBuckets]
+  );
+
+  const getWordBucket = useCallback(
+    (id: string) => {
+      return buckets[id] || DEFAULT_BUCKET;
+    },
+    [buckets]
+  );
+
+  return {getWordBucket, setWordBucket};
+}
 
 export function useIndexedDb() {
   const [db, setDb] = useAtom<IDBDatabase | null>(indexDBAtom);
@@ -60,40 +92,6 @@ export function useIndexedDb() {
     [db]
   );
 
-  // --- WordBuckets ---
-  const setWordBucket = useCallback(
-    (id: string, value: WordBucket) =>
-      new Promise<void>((resolve, reject) => {
-        try {
-          const store = getTransaction(WORDS_STORE, 'readwrite');
-          const req = store.put(value, id);
-          req.onsuccess = () => resolve();
-          req.onerror = () => reject(req.error);
-        } catch (e) {
-          reject(e);
-        }
-      }),
-    [getTransaction]
-  );
-
-  const getWordBucket = useCallback(
-    (id: string) => {
-      return new Promise<WordBucket>((resolve, reject) => {
-        const default_bucket = 1;
-
-        try {
-          const store = getTransaction(WORDS_STORE);
-          const req = store.get(id);
-          req.onsuccess = () => resolve((req.result || default_bucket) as WordBucket);
-          req.onerror = () => reject(req.error);
-        } catch (e) {
-          reject(e);
-        }
-      })
-    },
-    [getTransaction]
-  );
-
   // --- learnStats ---
   const addLearnStat = useCallback(
     (stat: LearnStat) =>
@@ -128,15 +126,14 @@ export function useIndexedDb() {
 
   return {
     ready: !!db,
-    setWordBucket,
-    getWordBucket,
     addLearnStat,
     getStatsByWordId,
   };
 }
 
 export function useUpdateWordStats() {
-  const {ready, getWordBucket, setWordBucket, addLearnStat} = useIndexedDb();
+  const {ready, addLearnStat} = useIndexedDb();
+  const {getWordBucket, setWordBucket} = useWordBuckets();
 
   return useCallback(function updateWordStats(wordId: string, isValid: boolean) {
     (async () => {
@@ -146,15 +143,18 @@ export function useUpdateWordStats() {
       }
 
       const timestamp = (new Date()).getTime();
-      let bucket = await getWordBucket(wordId);
+      let bucket = getWordBucket(wordId);
 
       if (isValid) {
-        bucket = Math.min(bucket+1, MAX_BUCKET);
+        bucket += 1;
       } else {
-        bucket = Math.max(bucket-1, MIN_BUCKET);
+        bucket -= 1;
       }
 
-      await setWordBucket(wordId, bucket);
+      bucket = Math.min(Math.max(bucket, MIN_BUCKET), MAX_BUCKET);
+
+      setWordBucket(wordId, bucket);
+
       await addLearnStat({
         id: wordId,
         correct: isValid,

@@ -4,6 +4,7 @@ import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import type { VerbInfo, VerbListPersistence } from './types.ts';
 import { DEFAULT_LISTS } from './words.ts';
 import { useExtractList, useListPersistenceById } from './manageLists.ts';
+import { MAX_BUCKET, MIN_BUCKET, useWordBuckets } from './statsStorage.ts';
 
 
 const DEFAULT_WORDS_LIST: VerbListPersistence = DEFAULT_LISTS[0];
@@ -12,13 +13,14 @@ export const currentWerkWord = atomWithStorage<VerbInfo | null>(
   'currentWerkWord',
   null,
   createJSONStorage(),
-  { getOnInit: true }
+  {getOnInit: true}
 );
 
 export function useNextWordCallback() {
   const [, setCurrentWord] = useAtom(currentWerkWord);
-  const [currentListPersistence, ] = useAtom(currentWordList);
+  const [currentListPersistence,] = useAtom(currentWordList);
   const currentList = useExtractList(currentListPersistence);
+  const {getWordBucket} = useWordBuckets();
 
   return useCallback(() => {
     if (!currentList) {
@@ -26,10 +28,30 @@ export function useNextWordCallback() {
     }
 
     const N = currentList.items.length - 1;
-    const nextIndex = Math.round(Math.random() * N);
+
+    const probability = new Array(N);
+    let sum = 0;
+
+    for (let i = 0; i < N; i++) {
+      // invert buckets to requested "probabilities"
+      probability[i] = MAX_BUCKET + MIN_BUCKET - getWordBucket(currentList.items[i].id);
+      sum += probability[i];
+    }
+
+    const target = Math.floor(Math.random() * sum);
+    let acc = 0;
+
+    let nextIndex = N - 1;
+    for (let i = 0; i < N; i++) {
+      acc += probability[i];
+      if (acc > target) {
+        nextIndex = i;
+        break;
+      }
+    }
 
     setCurrentWord(currentList.items[nextIndex]);
-  }, [setCurrentWord, currentList]);
+  }, [currentList, setCurrentWord, getWordBucket]);
 }
 
 
@@ -37,12 +59,12 @@ export const currentWordList = atomWithStorage<VerbListPersistence>(
   'currentWordsList',
   DEFAULT_WORDS_LIST,
   createJSONStorage(),
-  { getOnInit: true }
+  {getOnInit: true}
 );
 
 export function useWordListProvider() {
   const [currentWord, setCurrentWord] = useAtom(currentWerkWord);
-  const [currentListPersistence, ] = useAtom(currentWordList);
+  const [currentListPersistence,] = useAtom(currentWordList);
 
   const currentList = useExtractList(currentListPersistence);
 
@@ -56,12 +78,12 @@ export function useWordListProvider() {
 }
 
 export function useCurrentLearnList() {
-  const [currentListPersistence, ] = useAtom(currentWordList);
+  const [currentListPersistence,] = useAtom(currentWordList);
   return useExtractList(currentListPersistence);
 }
 
 export function useLearnList(id?: string) {
-  const [, setCurrentWordList ] = useAtom(currentWordList);
+  const [, setCurrentWordList] = useAtom(currentWordList);
   const [, setCurrentWord] = useAtom(currentWerkWord);
   const listPersistence = useListPersistenceById(id);
 

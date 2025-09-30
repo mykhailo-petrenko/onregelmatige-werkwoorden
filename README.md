@@ -12,7 +12,6 @@ Each world assign to the 1st Box. After correct answer move to the Box number +1
 ### Store answer statistics and word-to-bucket relation
 
 
-
 ## Build
 ```shell
 cd web-ui/
@@ -20,6 +19,26 @@ cd web-ui/
 ./docker_build.sh
 ./docker_push.sh
 ```
+
+## TODO:
+### 1.4.0
+#### All words list
+Should be the table (first page?) where should be visible all available words and their learning statuses.
+
+Learning Status now stick to Frequency Buckets, where:
+- `0` - Did not start yet, so basically it is no 0 bucket, but this abstraction indicates lack of data.
+- `1` - Not learned (Or a lot of mistakes).
+- `2`, `3`, `4` - Learning is on the way.
+- `5` - Learned (Good known).
+
+Table should have quick filters by levels (A1, A2, B1, B2, C1, C2, ...).
+
+There should be checkboxes and ability to add in a current learning list.
+
+#### Active learning vocabulary
+Words are selected to learn at this moment. Should be the lists total learning progressbar.
+
+From this list Learn component selecting next word to learn.
 
 ## Data
 Source is [data/onregelmatige-werkwoorden.json].

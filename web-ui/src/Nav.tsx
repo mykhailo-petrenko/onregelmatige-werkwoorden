@@ -21,6 +21,11 @@ export function Nav() {
           component={NavLink}
           color="inherit"
           to="/"
+        >Home</Button>
+        <Button
+          component={NavLink}
+          color="inherit"
+          to="/learn"
         >Learn</Button>
         <Button
           component={NavLink}

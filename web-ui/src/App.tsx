@@ -8,6 +8,7 @@ import { ProfilePage } from './pages/ProfilePage.tsx';
 import { Nav } from './Nav.tsx';
 import { ListsEditor } from './ListsEditor/ListsEditor.tsx';
 import { useWordListProvider } from './Lists/activeLlistProvider.ts';
+import { LearnPage } from './pages/LearnPage.tsx';
 
 function App() {
   useWordListProvider();
@@ -22,6 +23,7 @@ function App() {
             <Route index element={<ListsEditor />} />
             <Route path=":id" element={<ListsEditor />} />
           </Route>
+          <Route path="learn" element={<LearnPage />} />
           <Route path="profile" element={<ProfilePage/>}></Route>
         </Routes>
       </BrowserRouter>

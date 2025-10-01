@@ -1,7 +1,8 @@
-import VerbTrainer from '../VerbTrainer/VerbTrainer.tsx';
+import Vocabulary from "../Vocabulary/Vocabulary";
+
 
 export function HomePage() {
   return (<>
-    <VerbTrainer/>
+    <Vocabulary />
   </>);
 }

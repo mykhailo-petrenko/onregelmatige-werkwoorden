@@ -1,18 +1,13 @@
-import { useParams } from 'react-router';
-import { Button, Divider } from '@mui/material';
-import { useListById } from '../Lists/manageLists.ts';
+import { Divider, Container } from '@mui/material';
 import VerbListTable from './VerbListTable.tsx';
-import { useCurrentLearnList, useLearnList } from '../Lists/activeLlistProvider.ts';
+import { useCurrentLearnList } from '../Lists/activeLlistProvider.ts';
 
-export function ListsEditor() {
-  const params = useParams();
-  const list = useListById(params.id);
-  const onLearn = useLearnList(params.id);
+export function ListEditor() {
 
   const currentList = useCurrentLearnList();
 
-  if (!list) {
     return (<>
+    <Container maxWidth="lg">
       <section>
         <h3>{currentList?.label}</h3>
       </section>
@@ -20,21 +15,6 @@ export function ListsEditor() {
       <VerbListTable
         list={currentList}
       />
+      </Container>
     </>);
-  }
-
-  return (<>
-    <section>
-      <p>
-        <Button
-          onClick={onLearn}
-          variant="contained"
-        >Learn {list.items.length} words from {list.label}</Button>
-      </p>
-      <Divider />
-      <VerbListTable
-        list={list}
-      />
-    </section>
-  </>);
 }

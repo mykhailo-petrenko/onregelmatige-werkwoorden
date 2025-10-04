@@ -1,10 +1,9 @@
 import React, { type JSX } from 'react';
-import { LEVELS, LEVEL_IDS } from './levels';
 import { useAtom } from 'jotai';
 import { myListsPersistence } from '../Lists/manageLists';
-import { ALL_WORDS } from '../Lists/words';
+import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip } from '@mui/material';
+import { Box, Chip, Container } from '@mui/material';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
 
@@ -36,7 +35,13 @@ const columns: ColumnDef<VerbInfo>[] = [
 	},
 ];
 
-export default function Vocabulary(): JSX.Element {
+const LEVELS = DEFAULT_LISTS.map(l => l.label);
+const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
+	acc[list.label] = list.items;
+	return acc;
+}, {} as Record<string, string[]>);
+
+export function Vocabulary(): JSX.Element {
 	// keep reading lists to trigger updates when user changes their lists (not used directly now)
 	const [/* lists */] = useAtom(myListsPersistence);
 	const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
@@ -58,7 +63,7 @@ export default function Vocabulary(): JSX.Element {
 	};
 
 	return (
-		<div style={{ padding: 24 }}>
+		<Container maxWidth="lg">
 			<h2>Vocabulary</h2>
 
 			<Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -98,6 +103,6 @@ export default function Vocabulary(): JSX.Element {
 					))}
 				</tbody>
 			</table>
-		</div>
+		</Container>
 	);
 }

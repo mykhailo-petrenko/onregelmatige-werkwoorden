@@ -2,13 +2,12 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router';
-import { HomePage } from './pages/HomePage.tsx';
-import { ListsPage } from './pages/ListsPage.tsx';
+import { ListEditor } from './ListsEditor/ListsEditor.tsx';
 import { ProfilePage } from './pages/ProfilePage.tsx';
 import { Nav } from './Nav.tsx';
-import { ListsEditor } from './ListsEditor/ListsEditor.tsx';
 import { useWordListProvider } from './Lists/activeLlistProvider.ts';
 import { LearnPage } from './pages/LearnPage.tsx';
+import { Vocabulary } from './Vocabulary/Vocabulary.tsx';
 
 function App() {
   useWordListProvider();
@@ -18,13 +17,10 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route index element={<HomePage/>}></Route>
-          <Route path="lists" element={<ListsPage/>}>
-            <Route index element={<ListsEditor />} />
-            <Route path=":id" element={<ListsEditor />} />
-          </Route>
+          <Route index element={<Vocabulary/>} />
+          <Route path="lists" element={<ListEditor/>} />
           <Route path="learn" element={<LearnPage />} />
-          <Route path="profile" element={<ProfilePage/>}></Route>
+          <Route path="profile" element={<ProfilePage/>} />
         </Routes>
       </BrowserRouter>
     </>

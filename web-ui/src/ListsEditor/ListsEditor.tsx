@@ -1,20 +1,19 @@
-import { Divider, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import VerbListTable from './VerbListTable.tsx';
-import { useCurrentLearnList } from '../Lists/activeLlistProvider.ts';
+import { useCurrentLearnList, usedeleteWordFromCurrentList } from '../Lists/activeLlistProvider.ts';
 
 export function ListEditor() {
 
   const currentList = useCurrentLearnList();
+  const selecteWordFromList = usedeleteWordFromCurrentList();
 
-    return (<>
+  return (<>
     <Container maxWidth="lg">
-      <section>
-        <h3>{currentList?.label}</h3>
-      </section>
-      <Divider />
+      <p>&nbsp;</p>
       <VerbListTable
         list={currentList}
+        onDelete={selecteWordFromList}
       />
       </Container>
-    </>);
+  </>);
 }

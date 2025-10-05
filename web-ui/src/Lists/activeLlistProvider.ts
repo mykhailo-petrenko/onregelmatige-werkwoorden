@@ -82,6 +82,27 @@ export function useCurrentLearnList() {
   return useExtractList(currentListPersistence);
 }
 
+export function usedeleteWordFromCurrentList() {
+  const [currentList, setCurrentList] = useAtom(currentWordList);
+
+  return useCallback(function handleDelete(delete_id: string) {
+    if (!currentList) return;
+    const newItems = currentList.items.filter(id => id !== delete_id);
+    setCurrentList({...currentList, items: newItems});
+  }, [currentList, setCurrentList]);
+}
+
+export function useAddWordToCurrentList() {
+  const [currentList, setCurrentList] = useAtom(currentWordList);
+
+  return useCallback(function handleAdd(add_id: string) {
+    if (!currentList) return;
+    if (currentList.items.includes(add_id)) return;
+    const newItems = [...currentList.items, add_id];
+    setCurrentList({ ...currentList, items: newItems });
+  }, [currentList, setCurrentList]);
+}
+
 export function useLearnList(id?: string) {
   const [, setCurrentWordList] = useAtom(currentWordList);
   const [, setCurrentWord] = useAtom(currentWerkWord);

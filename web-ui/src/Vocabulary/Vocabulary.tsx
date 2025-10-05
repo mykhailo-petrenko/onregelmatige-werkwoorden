@@ -1,9 +1,8 @@
 import React, { type JSX } from 'react';
-import { useAtom } from 'jotai';
-import { myListsPersistence } from '../Lists/manageLists';
 import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip, Container } from '@mui/material';
+import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper } from '@mui/material';
+import { useWordBuckets, MAX_BUCKET } from '../Lists/statsStorage';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
 
@@ -35,6 +34,16 @@ const columns: ColumnDef<VerbInfo>[] = [
 	},
 ];
 
+const DEFAULT_COLOR = '#e0e0e0';
+
+const LEARNING_GRADIENT = [
+	'#FF4E11', 
+	'#FF8E15',
+	'#FAB733',
+	'#ACB334',
+	'#69B34C',
+];
+
 const LEVELS = DEFAULT_LISTS.map(l => l.label);
 const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
 	acc[list.label] = list.items;
@@ -42,8 +51,6 @@ const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
 }, {} as Record<string, string[]>);
 
 export function Vocabulary(): JSX.Element {
-	// keep reading lists to trigger updates when user changes their lists (not used directly now)
-	const [/* lists */] = useAtom(myListsPersistence);
 	const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
 
 	const filteredData = React.useMemo(() => {
@@ -52,9 +59,49 @@ export function Vocabulary(): JSX.Element {
 		return ALL_WORDS.filter(v => allowed.has(v.id));
 	}, [selectedLevels]);
 
+	const { getWordBucket } = useWordBuckets();
+
+	const progressCol: ColumnDef<VerbInfo> = React.useMemo(() => ({
+		id: 'progress',
+		header: 'Status',
+		accessorFn: (row) => row.id,
+		cell: (ctx) => {
+			const id = ctx.getValue() as string;
+			
+			const bucket = getWordBucket(id, 0);
+
+			// color mapping: 1 -> orange, 5 -> green, interpolate roughly
+			const color = bucket && LEARNING_GRADIENT[bucket - 1];
+
+			// render 5 segments; filled segments colored according to bucket, others are light gray
+			const segments = new Array(MAX_BUCKET).fill(0).map((_, i) => {
+				const filled = i < bucket;
+				return (
+					<Box
+						key={i}
+						sx={{
+							width: 18,
+							height: 10,
+							borderRadius: 1,
+							backgroundColor: filled ? color : DEFAULT_COLOR,
+						}}
+					/>
+				);
+			});
+
+			return (
+				<Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+					{segments}
+				</Box>
+			);
+		}
+	}), [getWordBucket]);
+
+	const columnsWithProgress = React.useMemo(() => [...columns, progressCol], [progressCol]);
+
 	const table = useReactTable<VerbInfo>({
 		data: filteredData,
-		columns,
+		columns: columnsWithProgress,
 		getCoreRowModel: getCoreRowModel(),
 	});
 
@@ -79,30 +126,32 @@ export function Vocabulary(): JSX.Element {
 				))}
 			</Box>
 
-			<table style={{ width: '100%', borderCollapse: 'collapse' }}>
-				<thead>
-					{table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
-						<tr key={hg.id}>
-							{hg.headers.map(h => (
-								<th key={h.id} style={{ borderBottom: '1px solid #ccc', padding: 8 }}>
-									{flexRender(h.column.columnDef.header, h.getContext())}
-								</th>
-							))}
-						</tr>
-					))}
-				</thead>
-				<tbody>
-					{table.getRowModel().rows.map((row: Row<VerbInfo>) => (
-						<tr key={row.id}>
-							{row.getVisibleCells().map((cell: Cell<VerbInfo, unknown>) => (
-								<td key={cell.id} style={{ borderBottom: '1px solid #eee', padding: 8 }}>
-									{flexRender(cell.column.columnDef.cell, cell.getContext())}
-								</td>
-							))}
-						</tr>
-					))}
-				</tbody>
-			</table>
+			<TableContainer component={Paper}>
+				<MuiTable size="small">
+					<TableHead>
+						{table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
+							<TableRow key={hg.id}>
+								{hg.headers.map(h => (
+									<TableCell key={h.id} sx={{ borderBottom: '1px solid #ccc' }}>
+										{flexRender(h.column.columnDef.header, h.getContext())}
+									</TableCell>
+								))}
+							</TableRow>
+						))}
+					</TableHead>
+					<TableBody>
+						{table.getRowModel().rows.map((row: Row<VerbInfo>) => (
+							<TableRow key={row.id}>
+								{row.getVisibleCells().map((cell: Cell<VerbInfo, unknown>) => (
+									<TableCell key={cell.id} sx={{ borderBottom: '1px solid #eee' }}>
+										{flexRender(cell.column.columnDef.cell, cell.getContext())}
+									</TableCell>
+								))}
+							</TableRow>
+						))}
+					</TableBody>
+				</MuiTable>
+			</TableContainer>
 		</Container>
 	);
 }

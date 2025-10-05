@@ -42,8 +42,8 @@ export function useWordBuckets() {
   );
 
   const getWordBucket = useCallback(
-    (id: string) => {
-      return buckets[id] || DEFAULT_BUCKET;
+    (id: string, default_value: number = DEFAULT_BUCKET) => {
+      return buckets[id] || default_value;
     },
     [buckets]
   );

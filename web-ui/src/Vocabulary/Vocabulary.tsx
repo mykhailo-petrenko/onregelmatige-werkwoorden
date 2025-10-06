@@ -3,9 +3,8 @@ import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
 import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, IconButton, Tooltip } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import { useWordBuckets, MAX_BUCKET } from '../Lists/statsStorage';
-import { useAtom } from 'jotai';
-import { currentWordList, useAddWordToCurrentList } from '../Lists/activeLlistProvider';
+import { useWordBuckets } from '../Lists/statsStorage';
+import { useAddWordToCurrentList } from '../Lists/activeLlistProvider';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
 
@@ -37,15 +36,7 @@ const columns: ColumnDef<VerbInfo>[] = [
 	},
 ];
 
-const DEFAULT_COLOR = '#e0e0e0';
-
-const LEARNING_GRADIENT = [
-	'#FF4E11', 
-	'#FF8E15',
-	'#FAB733',
-	'#ACB334',
-	'#69B34C',
-];
+import WordProgress from '../Lists/WordProgress';
 
 const LEVELS = DEFAULT_LISTS.map(l => l.label);
 const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
@@ -71,32 +62,7 @@ export function Vocabulary(): JSX.Element {
 		cell: (ctx) => {
 			const id = ctx.getValue() as string;
 			
-			const bucket = getWordBucket(id, 0);
-
-			// color mapping: 1 -> orange, 5 -> green, interpolate roughly
-			const color = bucket && LEARNING_GRADIENT[bucket - 1];
-
-			// render 5 segments; filled segments colored according to bucket, others are light gray
-			const segments = new Array(MAX_BUCKET).fill(0).map((_, i) => {
-				const filled = i < bucket;
-				return (
-					<Box
-						key={i}
-						sx={{
-							width: 18,
-							height: 10,
-							borderRadius: 1,
-							backgroundColor: filled ? color : DEFAULT_COLOR,
-						}}
-					/>
-				);
-			});
-
-			return (
-				<Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-					{segments}
-				</Box>
-			);
+			return <WordProgress wordId={id} />;
 		}
 	}), [getWordBucket]);
 

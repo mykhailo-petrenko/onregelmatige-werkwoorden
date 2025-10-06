@@ -3,6 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import type { VerbInfo, VerbList } from '../Lists/types.ts';
 import { memo, useMemo } from 'react';
+import WordProgress from '../Lists/WordProgress.tsx';
 
 export interface VerbListProps {
   list: VerbList | null;
@@ -30,6 +31,9 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
         <TableCell>{row.perfectum.join(', ')} ({row.hulpWerkwoorden.join('/')})</TableCell>
         <TableCell>{row.vertaling}</TableCell>
         <TableCell>
+          <WordProgress wordId={row.id} />
+        </TableCell>
+        <TableCell>
           <IconButton aria-label="delete" size="small" onClick={handleDelete}>
             <DeleteIcon fontSize="small" />
           </IconButton>
@@ -47,6 +51,7 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
             <TableCell colSpan={2}>Imperfectum</TableCell>
             <TableCell>Perfectum</TableCell>
             <TableCell>Vertaling</TableCell>
+            <TableCell>Progress</TableCell>
             <TableCell>Acties</TableCell>
           </TableRow>
         </TableHead>

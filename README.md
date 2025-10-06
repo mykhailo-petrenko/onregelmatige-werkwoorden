@@ -33,10 +33,14 @@ Learning Status now stick to Frequency Buckets, where:
 
 Table should have quick filters by levels (A1, A2, B1, B2, C1, C2, ...).
 
-There should be checkboxes and ability to add in a current learning list.
+There should be ability to add in a current learning list.
 
 #### Active learning vocabulary
 Words are selected to learn at this moment. Should be the lists total learning progressbar.
+
+Progress for each single word (segmented progress bar) should be visible.
+
+Should be abiliity to remove word from learning list.
 
 From this list Learn component selecting next word to learn.
 

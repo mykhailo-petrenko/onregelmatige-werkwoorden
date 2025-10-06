@@ -1,7 +1,7 @@
 import React, { type JSX } from 'react';
 import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, IconButton, Tooltip } from '@mui/material';
+import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, IconButton, Tooltip, TextField } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useWordBuckets } from '../Lists/statsStorage';
 import { useAddWordToCurrentList, useIsInActiveList } from '../Lists/activeLlistProvider';
@@ -47,13 +47,79 @@ const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
 export function Vocabulary(): JSX.Element {
 	const [selectedLevels, setSelectedLevels] = React.useState<string[]>([]);
 
-	const filteredData = React.useMemo(() => {
-		if (selectedLevels.length === 0) return ALL_WORDS;
-		const allowed = new Set<string>(selectedLevels.flatMap(lvl => LEVEL_IDS[lvl] || []));
-		return ALL_WORDS.filter(v => allowed.has(v.id));
-	}, [selectedLevels]);
+	const [searchQuery, setSearchQuery] = React.useState('');
+	// default sort: show vocabulary sorted by infinitive (infinitief)
+	const [sortBy, setSortBy] = React.useState<string | null>('infinitive');
+	const [sortDir, setSortDir] = React.useState<'asc' | 'desc'>('asc');
 
 	const { getWordBucket } = useWordBuckets();
+
+	// Debounced search to avoid doing expensive filtering on every keystroke
+	const [debouncedQuery, setDebouncedQuery] = React.useState(searchQuery);
+	React.useEffect(() => {
+		const id = setTimeout(() => setDebouncedQuery(searchQuery), 300);
+		return () => clearTimeout(id);
+	}, [searchQuery]);
+
+	// Async filtered data state (computed in idle time when possible)
+	const [filteredData, setFilteredData] = React.useState<VerbInfo[]>(ALL_WORDS);
+	const computeIdRef = React.useRef(0);
+
+	React.useEffect(() => {
+		const myId = ++computeIdRef.current;
+
+		const doWork = () => {
+			let base = ALL_WORDS;
+
+			if (selectedLevels.length !== 0) {
+				const allowed = new Set<string>(selectedLevels.flatMap(lvl => LEVEL_IDS[lvl] || []));
+				base = base.filter(v => allowed.has(v.id));
+			}
+
+			const q = debouncedQuery.trim().toLowerCase();
+			if (q) {
+				base = base.filter(v => {
+					const parts: string[] = [];
+					parts.push(v.infinitive || '');
+					if (Array.isArray(v.imperfectum)) parts.push((v.imperfectum as string[]).join(' '));
+					if (Array.isArray(v.perfectum)) parts.push((v.perfectum as string[]).join(' '));
+					if (Array.isArray(v.hulpWerkwoorden)) parts.push((v.hulpWerkwoorden as string[]).join(' '));
+					parts.push(v.vertaling || '');
+					const hay = parts.join(' ').toLowerCase();
+					return hay.includes(q);
+				});
+			}
+
+			if (sortBy) {
+				base = [...base].sort((a, b) => {
+					if (sortBy === 'infinitive') {
+						return sortDir === 'asc'
+							? a.infinitive.localeCompare(b.infinitive)
+							: b.infinitive.localeCompare(a.infinitive);
+					}
+					if (sortBy === 'progress') {
+						const A = getWordBucket(a.id);
+						const B = getWordBucket(b.id);
+						return sortDir === 'asc' ? A - B : B - A;
+					}
+					return 0;
+				});
+			}
+
+			if (computeIdRef.current === myId) {
+				setFilteredData(base);
+			}
+		};
+
+		// prefer requestIdleCallback when available so filtering runs off the main update path
+		if (typeof (window as any).requestIdleCallback === 'function') {
+			const handle = (window as any).requestIdleCallback(doWork);
+			return () => (window as any).cancelIdleCallback(handle);
+		} else {
+			const t = setTimeout(doWork, 0);
+			return () => clearTimeout(t);
+		}
+	}, [selectedLevels, debouncedQuery, sortBy, sortDir, getWordBucket]);
 
 	const progressCol: ColumnDef<VerbInfo> = React.useMemo(() => ({
 		id: 'progress',
@@ -84,17 +150,20 @@ export function Vocabulary(): JSX.Element {
 		<Container maxWidth="lg">
 			<h2>Vocabulary</h2>
 
-			<Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-				{LEVELS.map(lvl => (
-					<Chip
-						key={lvl}
-						label={lvl}
-						clickable
-						color={selectedLevels.includes(lvl) ? 'primary' : 'default'}
-						variant={selectedLevels.includes(lvl) ? 'filled' : 'outlined'}
-						onClick={() => handleChipClick(lvl)}
-					/>
-				))}
+			<Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+				<Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+					{LEVELS.map(lvl => (
+						<Chip
+							key={lvl}
+							label={lvl}
+							clickable
+							color={selectedLevels.includes(lvl) ? 'primary' : 'default'}
+							variant={selectedLevels.includes(lvl) ? 'filled' : 'outlined'}
+							onClick={() => handleChipClick(lvl)}
+						/>
+					))}
+				</Box>
+				<TextField size="small" placeholder="Search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
 			</Box>
 
 			<TableContainer component={Paper}>
@@ -102,11 +171,30 @@ export function Vocabulary(): JSX.Element {
 					<TableHead>
 					{table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
 						<TableRow key={hg.id}>
-							{hg.headers.map(h => (
-								<TableCell key={h.id} sx={{ borderBottom: '1px solid #ccc' }}>
-									{flexRender(h.column.columnDef.header, h.getContext())}
-								</TableCell>
-							))}
+							{hg.headers.map(h => {
+								const colId = h.id;
+								const sortable = colId === 'infinitive' || colId === 'progress';
+								const sortKey = colId === 'infinitive' ? 'infinitive' : colId === 'progress' ? 'progress' : null;
+								const isActiveSort = sortKey && sortBy === sortKey;
+								return (
+									<TableCell
+										key={h.id}
+										sx={{ borderBottom: '1px solid #ccc', cursor: sortable ? 'pointer' : 'default' }}
+										onClick={sortable ? () => {
+											if (!sortKey) return;
+											if (sortBy === sortKey) {
+												setSortDir(prev => prev === 'asc' ? 'desc' : 'asc');
+											} else {
+												setSortBy(sortKey);
+												setSortDir('asc');
+											}
+										} : undefined}
+									>
+										{flexRender(h.column.columnDef.header, h.getContext())}
+										{isActiveSort ? (sortDir === 'asc' ? ' ▲' : ' ▼') : null}
+									</TableCell>
+								);
+							})}
 							<TableCell sx={{ borderBottom: '1px solid #ccc' }}>Acties</TableCell>
 						</TableRow>
 					))}

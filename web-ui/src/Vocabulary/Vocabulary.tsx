@@ -4,7 +4,7 @@ import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-tabl
 import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, IconButton, Tooltip } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useWordBuckets } from '../Lists/statsStorage';
-import { useAddWordToCurrentList } from '../Lists/activeLlistProvider';
+import { useAddWordToCurrentList, useIsInActiveList } from '../Lists/activeLlistProvider';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
 
@@ -68,6 +68,7 @@ export function Vocabulary(): JSX.Element {
 
 	const columnsWithProgress = React.useMemo(() => [...columns, progressCol], [progressCol]);
 	const addToCurrentList = useAddWordToCurrentList();
+	const isInActiveList = useIsInActiveList();
 
 	const table = useReactTable<VerbInfo>({
 		data: filteredData,
@@ -119,16 +120,24 @@ export function Vocabulary(): JSX.Element {
 								</TableCell>
 							))}
 							<TableCell sx={{ borderBottom: '1px solid #eee' }}>
-								<Tooltip title="Add to active list">
-									<span>
-										<IconButton 
-											size="small" 
-											onClick={() => addToCurrentList((row.original as VerbInfo).id)}
-										>
-											<AddIcon fontSize="small" />
-										</IconButton>
-									</span>
-								</Tooltip>
+								{(() => {
+									const id = (row.original as VerbInfo).id;
+									const already = isInActiveList(id);
+									return (
+										<Tooltip title={already ? "Already in list" : "Add to active list"}>
+											<span>
+												<IconButton
+													size="small"
+													onClick={() => !already && addToCurrentList(id)}
+													disabled={already}
+													aria-label={already ? 'Already in list' : 'Add to active list'}
+												>
+													<AddIcon fontSize="small" color={already ? 'disabled' : 'inherit'} />
+												</IconButton>
+											</span>
+										</Tooltip>
+									);
+								})()}
 							</TableCell>
 						</TableRow>
 					))}

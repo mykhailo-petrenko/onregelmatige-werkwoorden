@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useAtom } from 'jotai';
 import { atomWithStorage, createJSONStorage } from 'jotai/utils';
 import type { VerbInfo, VerbListPersistence } from './types.ts';
@@ -80,6 +80,19 @@ export function useWordListProvider() {
 export function useCurrentLearnList() {
   const [currentListPersistence,] = useAtom(currentWordList);
   return useExtractList(currentListPersistence);
+}
+
+export function useIsInActiveList() {
+  const currentList = useCurrentLearnList();
+
+  const idSet = useMemo(() => {
+    if (!currentList) return new Set<string>();
+    return new Set(currentList.items.map(i => i.id));
+  }, [currentList]);
+
+  return useCallback((id: string) => {
+    return idSet.has(id);
+  }, [idSet]);
 }
 
 export function usedeleteWordFromCurrentList() {

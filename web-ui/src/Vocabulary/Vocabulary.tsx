@@ -1,10 +1,8 @@
-import React, { type JSX } from 'react';
+import React, { useCallback, type JSX } from 'react';
 import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, IconButton, Tooltip, TextField } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, TextField } from '@mui/material';
 import { useWordBuckets } from '../Lists/statsStorage';
-import { useAddWordToCurrentList, useIsInActiveList } from '../Lists/activeLlistProvider';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
 
@@ -34,9 +32,32 @@ const columns: ColumnDef<VerbInfo>[] = [
 		header: 'Vertaling',
 		cell: info => String(info.getValue()),
 	},
+	{
+		id: 'progress',
+		header: 'Status',
+		accessorFn: (row) => row.id,
+		cell: (ctx) => {
+			const id = ctx.getValue() as string;
+			
+			return <WordProgress wordId={id} />;
+		}
+	},
+	{
+		id: 'actions',
+		header: 'Acties',
+		cell: (ctx) => {
+			const id = ctx.row.original.id;
+
+			return (
+				<AddToList wordId={id} />
+			);
+		}
+	},
 ];
 
 import WordProgress from '../Lists/WordProgress';
+import { AddToList } from '../Lists/AddToList';
+import { SearchField } from '../Lists/SearchField';
 
 const LEVELS = DEFAULT_LISTS.map(l => l.label);
 const LEVEL_IDS = DEFAULT_LISTS.reduce((acc, list) => {
@@ -54,19 +75,10 @@ export function Vocabulary(): JSX.Element {
 
 	const { getWordBucket } = useWordBuckets();
 
-	// Debounced search to avoid doing expensive filtering on every keystroke
-	const [debouncedQuery, setDebouncedQuery] = React.useState(searchQuery);
-	React.useEffect(() => {
-		const id = setTimeout(() => setDebouncedQuery(searchQuery), 300);
-		return () => clearTimeout(id);
-	}, [searchQuery]);
-
 	// Async filtered data state (computed in idle time when possible)
 	const [filteredData, setFilteredData] = React.useState<VerbInfo[]>(ALL_WORDS);
-	const computeIdRef = React.useRef(0);
 
 	React.useEffect(() => {
-		const myId = ++computeIdRef.current;
 
 		const doWork = () => {
 			let base = ALL_WORDS;
@@ -76,7 +88,7 @@ export function Vocabulary(): JSX.Element {
 				base = base.filter(v => allowed.has(v.id));
 			}
 
-			const q = debouncedQuery.trim().toLowerCase();
+			const q = searchQuery.trim().toLowerCase();
 			if (q) {
 				base = base.filter(v => {
 					const parts: string[] = [];
@@ -106,9 +118,7 @@ export function Vocabulary(): JSX.Element {
 				});
 			}
 
-			if (computeIdRef.current === myId) {
-				setFilteredData(base);
-			}
+			setFilteredData(base);
 		};
 
 		// prefer requestIdleCallback when available so filtering runs off the main update path
@@ -119,32 +129,17 @@ export function Vocabulary(): JSX.Element {
 			const t = setTimeout(doWork, 0);
 			return () => clearTimeout(t);
 		}
-	}, [selectedLevels, debouncedQuery, sortBy, sortDir, getWordBucket]);
-
-	const progressCol: ColumnDef<VerbInfo> = React.useMemo(() => ({
-		id: 'progress',
-		header: 'Status',
-		accessorFn: (row) => row.id,
-		cell: (ctx) => {
-			const id = ctx.getValue() as string;
-			
-			return <WordProgress wordId={id} />;
-		}
-	}), [getWordBucket]);
-
-	const columnsWithProgress = React.useMemo(() => [...columns, progressCol], [progressCol]);
-	const addToCurrentList = useAddWordToCurrentList();
-	const isInActiveList = useIsInActiveList();
+	}, [selectedLevels, searchQuery, sortBy, sortDir, getWordBucket]);
 
 	const table = useReactTable<VerbInfo>({
 		data: filteredData,
-		columns: columnsWithProgress,
+		columns: columns,
 		getCoreRowModel: getCoreRowModel(),
 	});
 
-	const handleChipClick = (lvl: string) => {
+	const handleChipClick = useCallback((lvl: string) => {
 		setSelectedLevels(prev => prev.includes(lvl) ? prev.filter(x => x !== lvl) : [...prev, lvl]);
-	};
+	}, [setSelectedLevels]);
 
 	return (
 		<Container maxWidth="lg">
@@ -163,7 +158,9 @@ export function Vocabulary(): JSX.Element {
 						/>
 					))}
 				</Box>
-				<TextField size="small" placeholder="Search" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+				<SearchField 
+					onChange={setSearchQuery} 
+				/>
 			</Box>
 
 			<TableContainer component={Paper}>
@@ -195,7 +192,6 @@ export function Vocabulary(): JSX.Element {
 									</TableCell>
 								);
 							})}
-							<TableCell sx={{ borderBottom: '1px solid #ccc' }}>Acties</TableCell>
 						</TableRow>
 					))}
 					</TableHead>
@@ -207,26 +203,6 @@ export function Vocabulary(): JSX.Element {
 									{flexRender(cell.column.columnDef.cell, cell.getContext())}
 								</TableCell>
 							))}
-							<TableCell sx={{ borderBottom: '1px solid #eee' }}>
-								{(() => {
-									const id = (row.original as VerbInfo).id;
-									const already = isInActiveList(id);
-									return (
-										<Tooltip title={already ? "Already in list" : "Add to active list"}>
-											<span>
-												<IconButton
-													size="small"
-													onClick={() => !already && addToCurrentList(id)}
-													disabled={already}
-													aria-label={already ? 'Already in list' : 'Add to active list'}
-												>
-													<AddIcon fontSize="small" color={already ? 'disabled' : 'inherit'} />
-												</IconButton>
-											</span>
-										</Tooltip>
-									);
-								})()}
-							</TableCell>
 						</TableRow>
 					))}
 					</TableBody>

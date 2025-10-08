@@ -1,7 +1,7 @@
 import React, { useCallback, type JSX } from 'react';
 import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper, TextField } from '@mui/material';
+import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper } from '@mui/material';
 import { useWordBuckets } from '../Lists/statsStorage';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';
@@ -110,8 +110,8 @@ export function Vocabulary(): JSX.Element {
 							: b.infinitive.localeCompare(a.infinitive);
 					}
 					if (sortBy === 'progress') {
-						const A = getWordBucket(a.id);
-						const B = getWordBucket(b.id);
+						const A = getWordBucket(a.id, 0);
+						const B = getWordBucket(b.id, 0);
 						return sortDir === 'asc' ? A - B : B - A;
 					}
 					return 0;
@@ -176,7 +176,11 @@ export function Vocabulary(): JSX.Element {
 								return (
 									<TableCell
 										key={h.id}
-										sx={{ borderBottom: '1px solid #ccc', cursor: sortable ? 'pointer' : 'default' }}
+										sx={{
+											borderBottom: '1px solid #ccc', 
+											cursor: sortable ? 'pointer' : 'default',
+											whiteSpace: 'nowrap'
+										}}
 										onClick={sortable ? () => {
 											if (!sortKey) return;
 											if (sortBy === sortKey) {

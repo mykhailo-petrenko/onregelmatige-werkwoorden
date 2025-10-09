@@ -27,7 +27,7 @@ export function useNextWordCallback() {
       return;
     }
 
-    const N = currentList.items.length - 1;
+    const N = currentList.items.length;
 
     const probability = new Array(N);
     let sum = 0;

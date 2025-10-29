@@ -31,7 +31,7 @@ export function Nav() {
           <Button
             component={NavLink}
             color="inherit"
-            to="/lists"
+            to="/active"
           >Active list</Button>
         </Toolbar>
       </Container>

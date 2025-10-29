@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo } from 'react';
-import { Box, Button, Card, CardContent, Typography, Skeleton } from "@mui/material";
-import type { VerbInfo } from "../Lists/types.ts";
+import { Box, Button, Card, CardContent, Typography, Skeleton } from '@mui/material';
+import type { VerbInfo } from '../Lists/types.ts';
 import { VerbControl } from './VerbControl';
 import { useUpdateWordStats } from '../Lists/statsStorage.ts';
 
@@ -23,13 +23,13 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   const current = props?.current;
 
   const [checked, setChecked] = useState(false);
-  const [inputs, setInputs] = useState({ impSing: "", impPlur: "", part: "" });
+  const [inputs, setInputs] = useState({ impSing: '', impPlur: '', part: '' });
   const updateWordStats = useUpdateWordStats();
 
   const firstInputRef = useRef<HTMLInputElement>(null);
 
   const reset = () => {
-    setInputs({ impSing: "", impPlur: "", part: "" });
+    setInputs({ impSing: '', impPlur: '', part: '' });
     setChecked(false);
     firstInputRef?.current?.focus();
   };

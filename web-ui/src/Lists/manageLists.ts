@@ -32,7 +32,7 @@ export function useExtractList(list: VerbListPersistence | null): VerbList | nul
 export function useListPersistenceById(id?: string): VerbListPersistence | null {
   const [lists, ] = useAtom(myListsPersistence);
 
-  const index = parseInt(id || "-1", 10);
+  const index = parseInt(id || '-1', 10);
 
   return lists[index] || null;
 }

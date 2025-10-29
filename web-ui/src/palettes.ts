@@ -6,17 +6,17 @@ import { createTheme } from '@mui/material';
 export const netherlandsTheme = createTheme({
   palette: {
     primary: {
-      main: "#21468B", // Blue
+      main: '#21468B', // Blue
     },
     secondary: {
-      main: "#AE1C28", // Red
+      main: '#AE1C28', // Red
     },
     background: {
-      default: "#FFFFFF", // White
-      paper: "#FFFFFF",
+      default: '#FFFFFF', // White
+      paper: '#FFFFFF',
     },
     text: {
-      primary: "#000000",
+      primary: '#000000',
     },
   },
   // components: {

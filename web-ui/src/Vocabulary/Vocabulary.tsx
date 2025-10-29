@@ -141,77 +141,73 @@ export function Vocabulary(): JSX.Element {
 		setSelectedLevels(prev => prev.includes(lvl) ? prev.filter(x => x !== lvl) : [...prev, lvl]);
 	}, [setSelectedLevels]);
 
-	return (
-		<Container maxWidth="lg">
-			<h2>Vocabulary</h2>
-
-			<Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-				<Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-					{LEVELS.map(lvl => (
-						<Chip
-							key={lvl}
-							label={lvl}
-							clickable
-							color={selectedLevels.includes(lvl) ? 'primary' : 'default'}
-							variant={selectedLevels.includes(lvl) ? 'filled' : 'outlined'}
-							onClick={() => handleChipClick(lvl)}
-						/>
-					))}
-				</Box>
-				<SearchField 
-					onChange={setSearchQuery} 
-				/>
+	return (<>
+		<Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+			<Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+				{LEVELS.map(lvl => (
+					<Chip
+						key={lvl}
+						label={lvl}
+						clickable
+						color={selectedLevels.includes(lvl) ? 'primary' : 'default'}
+						variant={selectedLevels.includes(lvl) ? 'filled' : 'outlined'}
+						onClick={() => handleChipClick(lvl)}
+					/>
+				))}
 			</Box>
+			<SearchField 
+				onChange={setSearchQuery} 
+			/>
+		</Box>
 
-			<TableContainer component={Paper}>
-				<MuiTable size="small">
-					<TableHead>
-					{table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
-						<TableRow key={hg.id}>
-							{hg.headers.map(h => {
-								const colId = h.id;
-								const sortable = colId === 'infinitive' || colId === 'progress';
-								const sortKey = colId === 'infinitive' ? 'infinitive' : colId === 'progress' ? 'progress' : null;
-								const isActiveSort = sortKey && sortBy === sortKey;
-								return (
-									<TableCell
-										key={h.id}
-										sx={{
-											borderBottom: '1px solid #ccc', 
-											cursor: sortable ? 'pointer' : 'default',
-											whiteSpace: 'nowrap'
-										}}
-										onClick={sortable ? () => {
-											if (!sortKey) return;
-											if (sortBy === sortKey) {
-												setSortDir(prev => prev === 'asc' ? 'desc' : 'asc');
-											} else {
-												setSortBy(sortKey);
-												setSortDir('asc');
-											}
-										} : undefined}
-									>
-										{flexRender(h.column.columnDef.header, h.getContext())}
-										{isActiveSort ? (sortDir === 'asc' ? ' ▲' : ' ▼') : null}
-									</TableCell>
-								);
-							})}
-						</TableRow>
-					))}
-					</TableHead>
-					<TableBody>
-					{table.getRowModel().rows.map((row: Row<VerbInfo>) => (
-						<TableRow key={row.id}>
-							{row.getVisibleCells().map((cell: Cell<VerbInfo, unknown>) => (
-								<TableCell key={cell.id} sx={{ borderBottom: '1px solid #eee' }}>
-									{flexRender(cell.column.columnDef.cell, cell.getContext())}
+		<TableContainer component={Paper}>
+			<MuiTable size="small">
+				<TableHead>
+				{table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
+					<TableRow key={hg.id}>
+						{hg.headers.map(h => {
+							const colId = h.id;
+							const sortable = colId === 'infinitive' || colId === 'progress';
+							const sortKey = colId === 'infinitive' ? 'infinitive' : colId === 'progress' ? 'progress' : null;
+							const isActiveSort = sortKey && sortBy === sortKey;
+							return (
+								<TableCell
+									key={h.id}
+									sx={{
+										borderBottom: '1px solid #ccc', 
+										cursor: sortable ? 'pointer' : 'default',
+										whiteSpace: 'nowrap'
+									}}
+									onClick={sortable ? () => {
+										if (!sortKey) return;
+										if (sortBy === sortKey) {
+											setSortDir(prev => prev === 'asc' ? 'desc' : 'asc');
+										} else {
+											setSortBy(sortKey);
+											setSortDir('asc');
+										}
+									} : undefined}
+								>
+									{flexRender(h.column.columnDef.header, h.getContext())}
+									{isActiveSort ? (sortDir === 'asc' ? ' ▲' : ' ▼') : null}
 								</TableCell>
-							))}
-						</TableRow>
-					))}
-					</TableBody>
-				</MuiTable>
-			</TableContainer>
-		</Container>
-	);
+							);
+						})}
+					</TableRow>
+				))}
+				</TableHead>
+				<TableBody>
+				{table.getRowModel().rows.map((row: Row<VerbInfo>) => (
+					<TableRow key={row.id}>
+						{row.getVisibleCells().map((cell: Cell<VerbInfo, unknown>) => (
+							<TableCell key={cell.id} sx={{ borderBottom: '1px solid #eee' }}>
+								{flexRender(cell.column.columnDef.cell, cell.getContext())}
+							</TableCell>
+						))}
+					</TableRow>
+				))}
+				</TableBody>
+			</MuiTable>
+		</TableContainer>
+	</>);
 }

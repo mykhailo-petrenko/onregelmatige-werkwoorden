@@ -25,12 +25,12 @@ export const VerbControl: FC<VerbInputFieldProps> = function VerVerbControlbInpu
   let color = null;
 
   if (isError) {
-    color = "red";
+    color = 'red';
     endAdornment = <InputAdornment position="end"><CancelIcon sx={{ color: color }} /></InputAdornment>;
   }
 
   if (isSuccess) {
-    color = "green";
+    color = 'green';
     endAdornment = <InputAdornment position="end"><CheckCircleIcon sx={{ color: color }} /></InputAdornment>;
   }
 
@@ -54,9 +54,9 @@ export const VerbControl: FC<VerbInputFieldProps> = function VerVerbControlbInpu
       />
       <FormHelperText 
         id="helper-impSing"
-        sx={{ color: color, fontSize: "1.2em" }}
+        sx={{ color: color, fontSize: '1.2em' }}
 
-      >{(isChecked) ? props.correct : " "}</FormHelperText>
+      >{(isChecked) ? props.correct : ' '}</FormHelperText>
     </FormControl>
   );
 }

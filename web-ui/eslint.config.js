@@ -8,7 +8,7 @@ import { globalIgnores } from 'eslint/config'
 const config = tslint.config([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     extends: [
       js.configs.recommended,
       tslint.configs.recommended,
@@ -18,6 +18,12 @@ const config = tslint.config([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    // Enforce single quotes for strings/imports in TS/TSX/JS/JSX files
+    rules: {
+      // core quotes rule - applies across JS and TS files. Keep avoidEscape so template literals and
+      // strings containing single quotes remain usable.
+      quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     },
   },
 ]);

@@ -113,12 +113,12 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
     getCoreRowModel: getCoreRowModel(),
   });
 
-  return (
+  return (<>
+    <Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }} />
+      <SearchField onChange={setQuery} />
+    </Box>
     <TableContainer component={Paper}>
-      <Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }} />
-        <SearchField onChange={setQuery} />
-      </Box>
       <MuiTable size="small">
         <TableHead>
           {table.getHeaderGroups().map((hg: HeaderGroup<VerbInfo>) => (
@@ -163,7 +163,7 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
         </TableBody>
       </MuiTable>
     </TableContainer>
-  );
+  </>);
 });
 
 export default VerbListTable;

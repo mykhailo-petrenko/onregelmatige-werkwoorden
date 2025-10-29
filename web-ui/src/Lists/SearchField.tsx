@@ -1,5 +1,5 @@
-import { useEffect, useState, type JSX } from "react";
-import { TextField } from "@mui/material";
+import { useEffect, useState, type JSX } from 'react';
+import { TextField } from '@mui/material';
 
 export interface SearchFieldProps {
   value?: string;

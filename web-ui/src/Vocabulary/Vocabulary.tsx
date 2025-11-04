@@ -1,7 +1,7 @@
 import React, { useCallback, type JSX } from 'react';
 import { ALL_WORDS, DEFAULT_LISTS } from '../Lists/words';
 import { useReactTable, getCoreRowModel, flexRender } from '@tanstack/react-table';
-import { Box, Chip, Container, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper } from '@mui/material';
+import { Box, Chip, Table as MuiTable, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper } from '@mui/material';
 import { useWordBuckets } from '../Lists/statsStorage';
 import type { VerbInfo } from '../Lists/types';
 import type { ColumnDef, HeaderGroup, Row, Cell } from '@tanstack/react-table';

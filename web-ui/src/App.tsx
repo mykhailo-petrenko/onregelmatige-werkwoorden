@@ -9,6 +9,7 @@ import { useWordListProvider } from './Lists/activeLlistProvider.ts';
 import { LearnPage } from './pages/LearnPage.tsx';
 import { ActiveListPage } from './pages/ActiveListPage.tsx';
 import { AllVocabularyPage } from './pages/AllVocabularyPage.tsx';
+import Footer from './Footer';
 
 function App() {
   useWordListProvider();
@@ -25,6 +26,7 @@ function App() {
           <Route path="profile" element={<ProfilePage/>} />
         </Routes>
         </Container>
+        <Footer />
       </BrowserRouter>
     </>
   )

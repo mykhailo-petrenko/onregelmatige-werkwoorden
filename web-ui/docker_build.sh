@@ -2,7 +2,7 @@
 
 VERSION=$(head -n 1 version.txt)
 
-yarn build
+npm run build
 
 docker buildx build --platform=linux/amd64 \
   -t ur3amp/onregelmatige-werkwoorden:latest \

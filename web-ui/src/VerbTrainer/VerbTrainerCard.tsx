@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo } from 'react';
+import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo, type RefObject } from 'react';
 import { Box, Button, Card, CardContent, Typography, Skeleton } from '@mui/material';
 import type { VerbInfo } from '../Lists/types.ts';
 import { VerbControl } from './VerbControl';
@@ -26,12 +26,19 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   const [inputs, setInputs] = useState({ impSing: '', impPlur: '', part: '' });
   const updateWordStats = useUpdateWordStats();
 
-  const firstInputRef = useRef<HTMLInputElement>(null);
+  const impSingInputRef = useRef<HTMLInputElement>(null);
+  const impPlurInputRef = useRef<HTMLInputElement>(null);
+  const partInputRef = useRef<HTMLInputElement>(null);
+  const next: {[key: string]: RefObject<HTMLInputElement | null> | null} = {
+    'impSing': impPlurInputRef,
+    'impPlur': partInputRef,
+    'part': null,
+  };
 
   const reset = () => {
     setInputs({ impSing: '', impPlur: '', part: '' });
     setChecked(false);
-    firstInputRef?.current?.focus();
+    impSingInputRef?.current?.focus();
   };
 
   useEffect(() => {
@@ -40,6 +47,11 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
 
   const handleChange = useCallback((fieldName: string) => (e: ChangeEvent<HTMLInputElement >) => {
     setInputs({ ...inputs, [fieldName]: e.target.value });
+    const value = e.target.value;
+
+    if (next[fieldName] && value.length > 2 && value[value.length - 1] === ' ') {
+      next[fieldName]?.current?.focus();
+    }
   }, [inputs]);
 
   const isCorrect = (answer: string, expected: string[] | null) => {
@@ -129,7 +141,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
             isCorrect={isValid.impSing}
             correct={current.imperfectum[0]}
             isChecked={checked}
-            ref={firstInputRef}
+            ref={impSingInputRef}
           />
           <VerbControl
             id="impPlur"
@@ -139,6 +151,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
             isCorrect={isValid.impPlur}
             correct={current.imperfectum[1]}
             isChecked={checked}
+            ref={impPlurInputRef}
           />
 
           <Typography variant="subtitle1" sx={{ mt: 2 }}>
@@ -156,6 +169,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
             isCorrect={isValid.part}
             correct={current.perfectum.join(', ')}
             isChecked={checked}
+            ref={partInputRef}
           />
 
           <Box mt={3} display="flex" justifyContent="flex-end">

@@ -95,7 +95,7 @@ export function useIsInActiveList() {
   }, [idSet]);
 }
 
-export function usedeleteWordFromCurrentList() {
+export function useDeleteWordFromCurrentList() {
   const [currentList, setCurrentList] = useAtom(currentWordList);
 
   return useCallback(function handleDelete(delete_id: string) {

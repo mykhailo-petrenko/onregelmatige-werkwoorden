@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FC, memo, type RefObject } from 'react';
+import { useCallback, useEffect, useRef, useState, useMemo, type ChangeEvent, type FC, memo, type RefObject } from 'react';
 import { Box, Button, Card, CardContent, Typography, Skeleton } from '@mui/material';
 import type { VerbInfo } from '../Lists/types.ts';
 import { VerbControl } from './VerbControl';
@@ -29,11 +29,11 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
   const impSingInputRef = useRef<HTMLInputElement>(null);
   const impPlurInputRef = useRef<HTMLInputElement>(null);
   const partInputRef = useRef<HTMLInputElement>(null);
-  const next: {[key: string]: RefObject<HTMLInputElement | null> | null} = {
-    'impSing': impPlurInputRef,
-    'impPlur': partInputRef,
-    'part': null,
-  };
+  const next: {[key: string]: RefObject<HTMLInputElement | null> | null} = useMemo(() => ({
+    impSing: impPlurInputRef,
+    impPlur: partInputRef,
+    part: null,
+  }), [impPlurInputRef, partInputRef]);
 
   const reset = () => {
     setInputs({ impSing: '', impPlur: '', part: '' });
@@ -52,7 +52,7 @@ export const VerbTrainerCard: FC<VerbTrainerCardProps> = memo(function VerbTrain
     if (next[fieldName] && value.length > 2 && value[value.length - 1] === ' ') {
       next[fieldName]?.current?.focus();
     }
-  }, [inputs]);
+  }, [inputs, next]);
 
   const isCorrect = (answer: string, expected: string[] | null) => {
     if (expected === null) {

@@ -1,9 +1,9 @@
 import VerbListTable from '../ListsEditor/VerbListTable';
-import { useCurrentLearnList, usedeleteWordFromCurrentList } from '../Lists/activeLlistProvider';
+import { useCurrentLearnList, useDeleteWordFromCurrentList } from '../Lists/activeLlistProvider';
 
 export function ActiveListPage() {
   const currentList = useCurrentLearnList();
-  const selecteWordFromList = usedeleteWordFromCurrentList();
+  const selecteWordFromList = useDeleteWordFromCurrentList();
 
   return (<>
     <h2>What I learn</h2>

@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { useWordBuckets, MAX_BUCKET } from './statsStorage';
 
-export const DEFAULT_COLOR = '#e0e0e0';
+ const DEFAULT_COLOR = '#e0e0e0';
 
-export const LEARNING_GRADIENT = [
+const LEARNING_GRADIENT = [
   '#FF4E11',
   '#FF8E15',
   '#FAB733',

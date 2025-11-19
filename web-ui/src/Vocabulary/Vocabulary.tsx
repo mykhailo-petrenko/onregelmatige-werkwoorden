@@ -122,9 +122,9 @@ export function Vocabulary(): JSX.Element {
 		};
 
 		// prefer requestIdleCallback when available so filtering runs off the main update path
-		if (typeof (window as any).requestIdleCallback === 'function') {
-			const handle = (window as any).requestIdleCallback(doWork);
-			return () => (window as any).cancelIdleCallback(handle);
+		if (typeof window.requestIdleCallback === 'function') {
+			const handle = window.requestIdleCallback(doWork);
+			return () => window.cancelIdleCallback(handle);
 		} else {
 			const t = setTimeout(doWork, 0);
 			return () => clearTimeout(t);

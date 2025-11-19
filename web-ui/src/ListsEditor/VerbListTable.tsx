@@ -20,6 +20,7 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
 
   const data = useMemo<VerbInfo[]>(() => props.list?.items || [], [props.list?.items]);
+  const onDelete = props.onDelete
 
   const { getWordBucket } = useWordBuckets();
 
@@ -98,14 +99,14 @@ const VerbListTable = memo(function VerbListTable(props: VerbListProps) {
         cell: ctx => {
           const id = ctx.row.original.id;
           return (
-            <IconButton aria-label="delete" size="small" onClick={() => props.onDelete?.(id)}>
+            <IconButton aria-label="delete" size="small" onClick={() => onDelete?.(id)}>
               <DeleteIcon fontSize="small" />
             </IconButton>
           );
         }
       }
     ];
-  }, [props.onDelete]);
+  }, [onDelete]);
 
   const table = useReactTable<VerbInfo>({
     data: filteredAndSorted,
